@@ -45,5 +45,11 @@
 &__items{
     font-weight: bold;
     gap:1rem;
+    transition: color vars.$transition-hover;
+
+}
+&__items:hover{
+    color: vars.$color-secondary;
+    cursor: pointer;
 }
 }
