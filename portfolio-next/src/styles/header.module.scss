@@ -7,7 +7,7 @@
     gap: 2rem;
     border-radius: 0 0 5px 0;
     background-color: transparent;
-    background-color: aqua;
+    // background-color: aqua;
 &__cornereffect{
     display: block;
     width: 30px;
@@ -18,10 +18,10 @@
 & h1 {
     border-radius: 0 0 15px 0;
     background-color: vars.$color-primary ;
-
+padding-top: 2rem;
 }
     &__item{
-        border: solid 1px red;
+        // border: solid 1px red;
         text-align: center;
         padding: 1rem 0;
        
@@ -30,7 +30,7 @@
 .navbar{
     background: vars.$color-primary-opacity50;
     display: grid;
-    grid-template-columns: 60px 60px 80px;
+    grid-template-columns: 60px 60px 80px 60px 20px 20px;
     gap: 2rem;
     align-items: center;
     justify-content: center;
@@ -41,15 +41,24 @@
     margin-left: 2rem;
     box-shadow: vars.$box-shadow;
     // overflow: hidden;
-    &
+    
 &__items{
     font-weight: bold;
     gap:1rem;
-    transition: color vars.$transition-hover;
+    transition: all vars.$transition-hover;
+    &:nth-last-child(-n + 2):hover{
+        transform: scale(1.1);
+    }
 
 }
 &__items:hover{
     color: vars.$color-secondary;
     cursor: pointer;
 }
+}
+/**************medium device*************/
+
+@media screen and (max-width: 1024px) {
+
+    
 }
