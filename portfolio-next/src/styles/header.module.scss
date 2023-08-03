@@ -137,8 +137,9 @@
     width: 100%;
     left: 0;
     background-color:vars.$color-background;
-    border-radius: vars.$border-radius;
+    border-radius: vars.$border-radius 10px vars.$border-radius  vars.$border-radius  ;
     padding: 1rem 0.5rem 2rem 0.5rem ;
+
     & ul li {
         font-size: 1.5rem;
         padding: 0.5rem;
@@ -151,19 +152,24 @@
     }
     &__cornereffect__left{
         transform: rotate(180deg);
-        position: relative;
-        right: 110px;
+        position: absolute;
+        right: 95px;
         width: 30px;
-        top: 25px;
+        top: 55px;
+    
         
       }
       &__cornereffect__right{
         transform: rotate(-90deg);
-        position: relative;
-        right: 30px;
-        width: 30px;
-        top: 25px;
+        position: absolute;
+        right: 2px;
+        width: 15px;
+        top: 67px;
         
+    
       }
+  }
+  .opened {
+    opacity:1;
   }
 }

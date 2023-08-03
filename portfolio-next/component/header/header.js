@@ -123,7 +123,7 @@ export default function Header() {
           {openMenu ? (
             <>
               <svg
-                className={styles.navbarSmartphone__cornereffect__left}
+                className={styles.navbarSmartphone__cornereffect__left }
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 100 100"
               >
