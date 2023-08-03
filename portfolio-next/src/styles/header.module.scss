@@ -48,6 +48,7 @@
     font-weight: bold;
     gap: 1rem;
     transition: all vars.$transition-hover;
+    list-style-type: none;
 
     &:nth-last-child(-n + 2):hover {
       transform: scale(1.1);

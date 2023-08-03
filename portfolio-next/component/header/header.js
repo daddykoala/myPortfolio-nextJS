@@ -35,20 +35,30 @@ setOpenMenu(!openMenu)
       </svg>{" "}
       {screenWidth > 1024 ? (
         <>
-          <div className={styles.header__item}>
-            <ul className={styles.navbar}>
-              <nav className={styles.navbar__items}> Contact </nav>{" "}
-              <nav className={styles.navbar__items}> Projets </nav>{" "}
-              <nav className={styles.navbar__items}> A propos </nav>{" "}
-              <nav className={styles.navbar__items}> Projets </nav>{" "}
-              <nav className={styles.navbar__items}>
-                <MyImageComponent src="/png/linkedin.png" alt="logo linkedin" />
-              </nav>{" "}
-              <nav className={styles.navbar__items}>
-                <MyImageComponent src="/png/wattsapp.png" alt="logo wattsapp" />
-              </nav>{" "}
-            </ul>{" "}
-          </div>{" "}
+         <div className={styles.header__item}>
+  <nav>
+    <ul className={styles.navbar}>
+      <li className={styles.navbar__items}>
+        <Link href="/contact">Contact</Link>
+      </li>
+      <li className={styles.navbar__items}>
+        <Link href="/projects">Projets</Link>
+      </li>
+      <li className={styles.navbar__items}>
+        <Link href="/about">A propos</Link>
+      </li>
+      <li className={styles.navbar__items}>
+        <Link href="/projects">Projets</Link>
+      </li>
+      <li className={styles.navbar__items}>
+        <MyImageComponent src="/png/linkedin.png" alt="logo linkedin" />
+      </li>
+      <li className={styles.navbar__items}>
+        <MyImageComponent src="/png/wattsapp.png" alt="logo wattsapp" />
+      </li>
+    </ul>
+  </nav>
+</div>
           <div className={styles.header__item}> s </div>{" "}
         </>
       ) : (
