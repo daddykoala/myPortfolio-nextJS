@@ -14,6 +14,7 @@
     width: 30px;
     position: absolute;
     left: 20%;
+    
   }
 
   & h1 {
@@ -42,6 +43,7 @@
   padding: 1rem 2rem;
   margin-left: 2rem;
   box-shadow: vars.$box-shadow;
+  
   // overflow: hidden;
 
   &__items {
@@ -59,6 +61,7 @@
     color: vars.$color-secondary;
     cursor: pointer;
   }
+
 }
 
 /**************medium device*************/
@@ -69,7 +72,7 @@
     display: flex;
     justify-content: space-between;
     background-color: transparent;
-    // background-color: aqua;
+    
     &__1024px {
       display: flex;
       justify-content: space-between;
@@ -96,15 +99,71 @@
       border-radius: 5px;
 
       cursor: pointer;
+     
     }
     &__socials {
       display: flex;
       border: 2px solid #080808;
       background-color: vars.$color-primary;
+      transition: background-color vars.$transition-hover;
       border-radius: 30px;
       padding: 7px 10px;
       transform: translateY(2px);
       list-style-type: none;
+      
+      &__open {
+        border: none;
+        background-color: vars.$color-background;
+      border-radius: 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: background-color vars.$transition-hover;
+        background-color: vars.$color-background;
+        left: 0;
+        top:15px;
+        
+      }
+      }
     }
+  }
+  .navbarSmartphone{
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    left: 0;
+    background-color:vars.$color-background;
+    border-radius: vars.$border-radius;
+    padding: 1rem 0.5rem 2rem 0.5rem ;
+    & ul li {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        border-bottom: 2px solid vars.$color-border;
+        transition:vars.$transition-hover;
+    }
+    & ul li:hover {
+        transform:translateX(5px);
+        color: vars.$color-primary;
+    }
+    &__cornereffect__left{
+        transform: rotate(180deg);
+        position: relative;
+        right: 110px;
+        width: 30px;
+        top: 25px;
+        
+      }
+      &__cornereffect__right{
+        transform: rotate(-90deg);
+        position: relative;
+        right: 30px;
+        width: 30px;
+        top: 25px;
+        
+      }
   }
 }
