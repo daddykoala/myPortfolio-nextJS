@@ -7,7 +7,7 @@ import { mediaSlice } from './slice/mediaSlice'
 
 export const store = configureStore({
   reducer: {
-    // Add the generated reducer as a specific top-level slice
+    
     screen:mediaSlice.reducer
   },
 
