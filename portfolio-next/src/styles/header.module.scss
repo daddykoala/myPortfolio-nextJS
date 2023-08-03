@@ -7,6 +7,8 @@
   gap: 2rem;
   border-radius: 0 0 5px 0;
   background-color: transparent;
+  position: fixed;
+  border-top: solid 5px white ;
 
   // background-color: aqua;
   &__cornereffect {
@@ -72,6 +74,7 @@
     display: flex;
     justify-content: space-between;
     background-color: transparent;
+    
     
     &__1024px {
       display: flex;
