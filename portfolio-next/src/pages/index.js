@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 //component
 import Header from '../../component/header/header'
 import About  from '../../component/about/about';
+import Projet from '../../component/projet/projet';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,6 +36,7 @@ export default function Home() {
         <div className={`${styles.home} ${inter.className}`}>
         <About/>
         <div>
+          <Projet/>
 
         </div>
         </div>
