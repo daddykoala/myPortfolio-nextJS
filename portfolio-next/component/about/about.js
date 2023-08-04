@@ -1,4 +1,5 @@
 import React ,{useEffect} from "react";
+import { useSelector } from "react-redux";
 import styles from "@/styles/about.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +7,8 @@ import ME from "../../public/png/imageprofil.png";
 import INSTA from "../../public/png/instagram.png";
 function About() {
 //leger parallax lorsqu'on scroole sur page je modifie selon la couche la vitesse de defilement.
+const screenWidth =useSelector((state)=> state.screen.screenWidth)
+console.log(screenWidth);
 
 useEffect(() => {
   const handleScroll = () => {
@@ -53,8 +56,20 @@ useEffect(() => {
       </div>
       <div className={styles.about__profil__parallax}>
         
-          <Image className={styles.about__profil__parallax1} src={ME} alt="clement moretti" width={450} height={600} />
-          <Image  className={styles.about__profil__parallax2} src={INSTA} alt="insta" width={500} height={500} />
+        
+          <Image
+           className={styles.about__profil__parallax1} 
+           src={ME} 
+           alt="clement moretti" 
+           width={screenWidth > 1024 ? 450 : 450} 
+           height={screenWidth > 1024 ? 625: 625}  />
+
+          <Image  
+          className={styles.about__profil__parallax2} 
+          src={INSTA} 
+          alt="insta" 
+          width={screenWidth >1024 ? 450 : 400 } 
+          height={screenWidth >1024 ? 450 : 400 }  />
         
       </div>
     </section>
