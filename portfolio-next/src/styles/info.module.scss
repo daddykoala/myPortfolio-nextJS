@@ -22,13 +22,18 @@
 @media screen and (max-width: 1024px) {
     .info{
         display: grid;
+        //je reinitialise mon display
         grid-template-rows: none;
         grid-template-columns: 20% 40% 35%;
         height: 300px;
         justify-content: space-around;
         margin: 1rem 0;
-        
-        gap: 10px;
-        padding: 0 10px;
+      
     } 
+}
+
+
+/************tablette ********/
+@media screen and (max-width: 600px) {
+
 }

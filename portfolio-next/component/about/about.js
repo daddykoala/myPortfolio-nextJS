@@ -61,15 +61,15 @@ useEffect(() => {
            className={styles.about__profil__parallax1} 
            src={ME} 
            alt="clement moretti" 
-           width={screenWidth > 1024 ? 450 : 450} 
-           height={screenWidth > 1024 ? 625: 625}  />
+           width={screenWidth > 1024 ? 450 : 425} 
+           height={screenWidth > 1024 ? 625: 600}  />
 
           <Image  
           className={styles.about__profil__parallax2} 
           src={INSTA} 
           alt="insta" 
-          width={screenWidth >1024 ? 450 : 400 } 
-          height={screenWidth >1024 ? 450 : 400 }  />
+          width={screenWidth >1024 ? 450 : 350 } 
+          height={screenWidth >1024 ? 450 : 350 }  />
         
       </div>
     </section>

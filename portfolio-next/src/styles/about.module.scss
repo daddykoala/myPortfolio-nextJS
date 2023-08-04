@@ -67,8 +67,39 @@
     }
 }
 @media screen and (max-width: 1024px) {
+    //voir home.modules pour voir le responsive du parent 
     
 }
 @media screen and (max-width: 600px) {
+    .container__about{
+        display: block;
+        
+    }
+    .about{
+        color: vars.$color-primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 5rem;
+        // padding: 1rem;
+     
 
+        &__button{
+            justify-content: space-between;
+        }
+        &__motivation{
+            position: absolute;
+            top:75%;
+            background-color: rgba(255, 255, 255, 0.863);
+            border-radius: vars.$border-radius 0 vars.$border-radius 0;
+            height: 150px;
+            font-size: 22px;
+            padding:1rem;
+            margin: 1rem;
+            
+        }
+        &__profil__parallax{
+            margin-top: 1rem; 
+        }
+        }
 }
