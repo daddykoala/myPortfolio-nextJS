@@ -24,14 +24,21 @@ export default function Header() {
     <header className={styles.header}>
       <h1 className={styles.header__item}> Moretti Clément </h1>{" "}
       <svg
-        className={styles.header__cornereffect}
+        className={styles.header__cornereffectRight}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
       >
         <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#ffffff">
-          {" "}
-        </path>{" "}
-      </svg>{" "}
+        </path>
+      </svg>
+      <svg
+        className={styles.header__cornereffectLeft}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+      >
+        <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#ffffff">
+        </path>
+      </svg>
       {screenWidth > 1024 ? (
         <>
           <div className={styles.header__item}>
