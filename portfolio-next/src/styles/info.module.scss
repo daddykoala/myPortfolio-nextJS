@@ -1,0 +1,20 @@
+.info{
+    display: grid;
+    grid-template-rows: 20% 40% 38%;
+    gap: 10px;
+    text-align: center;
+   
+
+    &__story{
+        background-color: antiquewhite;
+        border-radius: 200px;
+    }
+    &__statistique{
+        background-color: rgb(215, 226, 250);
+        border-radius: 50px;
+    }
+    &__projet{
+        background-color: rgb(250, 215, 245);
+        border-radius: 50px;
+    }
+}

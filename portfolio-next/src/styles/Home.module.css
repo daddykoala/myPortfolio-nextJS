@@ -3,7 +3,12 @@
  max-width: 1600px; 
  margin:  auto;
 }
-
+.home{
+    display: grid;
+    grid-template-columns: 75% 1fr;
+    gap: 10px;
+    padding: 0 10px;
+}
 
 
 
