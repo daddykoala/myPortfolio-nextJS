@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Header() {
   //je recupere la valeur de l'ecran
   const screenWidth = useSelector((state) => state.screen.screenWidth);
-  console.log(screenWidth);
+  
   //composant image reutilisable car toute les images de la meme taille.
   const MyImageComponent = ({ src, alt }) => (
     <Image src={src} alt={alt} width={30} height={30} />
