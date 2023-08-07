@@ -33,3 +33,5 @@ const dataProjet = [
         alt: "aude logo",
     },
 ]
+
+export default dataProjet;

@@ -2,5 +2,18 @@
 
 .projet{
     height:100vh;
-    background-color: aqua;
+    // background-color: aqua;
+    padding: 10px;
+    &__container{
+
+    }
 }
+/**************medium device*************/
+
+@media screen and (max-width: 1024px) {}
+
+
+
+    /**************small device*************/
+
+@media screen and (max-width: 600px) {}

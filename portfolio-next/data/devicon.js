@@ -1,4 +1,4 @@
-[
+ const devicon = [
     {
         "name": "adonisjs",
         "tags": [
@@ -5777,5 +5777,6 @@
         "color": "#294172", 
         "aliases": [] 
     }
+ ]
 
-]
+export default devicon;
