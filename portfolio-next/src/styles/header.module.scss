@@ -16,7 +16,8 @@
     display: block;
     width: 30px;
     position: absolute;
-    left: 20%;
+    right: 10px;
+
   }
   &__cornereffectLeft {
     display: block;
@@ -86,7 +87,9 @@
       transform: rotate(90deg);
       top: 84px;
       width: 40px;
-      left: 97%;
+    &__desc{
+      transform: rotate(90deg);
+    }
     }
     &__cornereffectLeft {
       top: 84px;
@@ -193,7 +196,31 @@
       top: 84px;
       width: 40px;
 
-      left: 91%;
+      
+    }
+  }
+}
+
+/**************small device*************/
+
+@media screen and (max-width: 600px) {
+  .header {
+    & h1 {
+      // transform: rotate(90deg);
+      font-size: 18px;
+    }
+    & h2 {
+      // display: none;
+      padding: 15px 5px 15px 5px;
+    }
+    &__item {
+      // border: solid 1px red;
+      text-align: center;
+      padding: none;
+      padding-left: 0.5rem;
+    }
+    & h2 {
+      font-size: 14px;
     }
   }
 }
