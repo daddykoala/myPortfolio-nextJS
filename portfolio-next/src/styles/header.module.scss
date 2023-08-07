@@ -6,39 +6,53 @@
   grid-template-columns: 20% 1fr 20%;
   gap: 2rem;
   border-radius: 0 0 5px 0;
+
   background-color: transparent;
   position: fixed;
   border-top: solid 5px white;
   z-index: 1000;
-
   // background-color: aqua;
   &__cornereffectRight {
     display: block;
     width: 30px;
     position: absolute;
     right: 10px;
-
   }
   &__cornereffectLeft {
     display: block;
     width: 30px;
     position: absolute;
-    top: 98px;
+    bottom: -30px;
     left: 10px;
+  }
+  &__cornereffectLeft2 {
+    display: block;
+    width: 30px;
+    position: absolute;
+    top: 0px;
+    right: -30px;
   }
 
   & h1 {
     border-radius: 0 0 15px 0;
-    background-color: vars.$color-primary;
-    padding-top: 2rem;
     font-size: 1.5rem;
+    text-align: center;
+    transform: translateY(50%);
+
   }
 
-  &__item {
-    // border: solid 1px red;
-    text-align: center;
-    padding: 1rem;
+  &__item:nth-child(1) {
+    background-color: vars.$color-primary;
+    border-radius: 0 0 30px 0px;
+    position: relative;
   }
+  &__item {
+    padding-top:16px;
+  }
+//   &__item1 {
+// background-color: vars.$color-primary;
+// border-radius: 0 0 30px 0px;
+//   }
 }
 
 .navbar {
