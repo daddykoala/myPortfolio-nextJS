@@ -4,12 +4,31 @@ import dataProjet from "../../data/dataProjet";
 import devicon from "../../data/devicon";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+// import 'swiper/element/css/navigation ';
+
 
 function projet() {
+
   return (
     <section className={styles.projet}>
+
+    <Swiper
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      navigation
+      spaceBetween={50}
+      slidesPerView={1}
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+    >
+      
       {dataProjet.map((projet) => {
         return (
+          <SwiperSlide>
+            
+          
           <article
           key={projet.index}
           className={styles.projet__container}
@@ -84,8 +103,10 @@ function projet() {
 
             </div>
           </article>
+          </SwiperSlide>
         );
       })}
+      </Swiper>
     </section>
   );
 }
