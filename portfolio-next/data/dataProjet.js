@@ -9,7 +9,7 @@ const dataProjet = [
         techno:["nodejs","react","postgresql","heroku","express"],
         src: "/png/develott.png",
         alt: "Develott logo",
-        color1:"#63ACBO",
+        color1:"#63ACB0",
         color2:"#1D3679",
     },
     {
@@ -22,8 +22,8 @@ const dataProjet = [
         techno:["react","redux","jest","nodejs","sequelize","nginx","hostinger","photoshop","express"],
         src: "/png/logo_docker.png",
         alt: "trellite logo",
-        color1:"",
-        color2:"",
+        color1:"#186441eb",
+        color2:"#186441eb",
     },
     {
         name:"Aude Renson",
@@ -35,8 +35,8 @@ const dataProjet = [
         techno:["react","redux","nextjs"],
         src: "/png/logoAude.png",
         alt: "aude logo",
-        color1:"",
-        color2:"",
+        color1:"#f99ed9",
+        color2:"#ff800a56",
     },
 ]
 
