@@ -9,7 +9,7 @@ function projet() {
     <section className={styles.projet}>
       {dataProjet.map((projet) => {
         return (
-          <div
+          <article
           key={projet.index}
           className={styles.projet__container}
           style={{
@@ -42,14 +42,16 @@ function projet() {
             </div>
 
             <h2 className={styles.projet__title}>{projet.name}</h2>
-            <h3>{projet.description}</h3>
+            <aside>{projet.description}</aside>
             <div className={styles.projet__container__git}>
-              <a href={projet.link_github}>{projet.link_github}</a>
-              <a href={projet.link_github}>{projet.link_github_back}</a>
+              <a className={styles.projet__container__git__button} href={projet.link_github} target="blank">repo front</a>
+              <a className={styles.projet__container__git__button} href={projet.link_github}>repo back</a>
             </div>
             <div></div>
+            <h3>Techno :</h3>
             {projet.techno.map((tech) => {
               return (
+                
                 <Image
                   key={tech.index}
                   src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
@@ -57,9 +59,10 @@ function projet() {
                   width={50}
                   height={50}
                 />
+                
               );
             })}
-          </div>
+          </article>
         );
       })}
     </section>
