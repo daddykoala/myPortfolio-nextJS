@@ -7,7 +7,7 @@ const dataProjet = [
         link_web:"https://develott.fr",
         langage:"javascript",
         techno:["nodejs","react","postgresql","heroku","express"],
-        src: "/png/logo_docker.png",
+        src: "/png/develott.png",
         alt: "Develott logo",
     },
     {
