@@ -31,15 +31,15 @@
     color: vars.$color-primary;
     position: relative;
     overflow: hidden;
-    // z-index: -2;
+    border: 3px solid white ;
 
-    //logo postionné dans l'angle de la div
     &__bglogo1 {
       position: absolute;
       transform: rotate(30deg);
       right: -15px;
       top: -22px;
     }
+
     &__bglogo2 {
       position: absolute;
       transform: skew(30deg, 20deg);
@@ -54,6 +54,58 @@
       background: #ffffff63;
       opacity: 0.5;
     //   z-index: -1;
+    }
+
+    &__link{
+        display: flex;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #ffffff;
+        color: black;
+        text-align: center;
+        border-radius: 30px 0px 0 0 ;
+        bottom: 0;
+        right: 0;
+        // on annule margin bottom qu'on a donné a tout les elements precedemment juste pour cet élement
+        margin-bottom: 0;
+        padding:0.5rem
+        // overflow: hidden;
+        
+    }
+
+    &__link__button{
+        display: flex;
+        background-color: rgb(8, 8, 8);
+        color: #ffffff;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-radius: 50px;
+        // transform:translateY(-50%)
+        
+    }
+
+    &__link__corner1{
+        display: block;
+        width: 50px;
+        height: auto;
+        top: -50px;
+        /* left: 0px; */
+        position: absolute;
+        transform: rotate(180deg);
+        right: 0;
+    }
+    &__link__corner2{
+        display: block;
+        width: 50px;
+        height: auto;
+        /* top: -50px; */
+        left: -50px;
+        position: absolute;
+        transform: rotate(180deg);
+        /* right: 0; */
+        bottom: 0;
     }
     &__git{
         display: flex;
