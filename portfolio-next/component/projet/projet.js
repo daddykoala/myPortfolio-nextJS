@@ -9,8 +9,8 @@ function projet() {
     <section className={styles.projet}>
       {dataProjet.map((projet) => {
         return (
-          <div className={styles.projet__container}>
-            <h2>{projet.name}</h2>
+          <div key={projet.index} className={styles.projet__container}>
+            <h2 className={styles.projet__title}>{projet.name}</h2>
             <h3>{projet.description}</h3>
             <div className={styles.projet__container__git}>
               <a href={projet.link_github}>{projet.link_github}</a>
@@ -20,6 +20,7 @@ function projet() {
             {projet.techno.map((tech) => {
               return (
                 <Image
+                key={tech.index}
                   src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
                   alt=""
                   width={50}
