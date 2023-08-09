@@ -16,7 +16,7 @@ import INSTA from "../../public/png/halftone.png";
 function About() {
   //leger parallax lorsqu'on scroole sur page je modifie selon la couche la vitesse de defilement.
   const screenWidth = useSelector((state) => state.screen.screenWidth);
-  console.log(screenWidth);
+  
 
 
   useEffect(() => {
