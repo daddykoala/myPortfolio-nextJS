@@ -27,7 +27,7 @@ export default function projetButton({link_web}) {
       initial={{ rotate: 0 }}
       whileHover={{ rotate: 360 }}
       onHoverStart={() => {
-        setTimeout(() => setButtonContent("→"), 200);
+        setTimeout(() => setButtonContent("→→→"), 200);
       }}
       onHoverEnd={()=> setButtonContent("Visit")}
       transition={{

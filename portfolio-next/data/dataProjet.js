@@ -38,6 +38,19 @@ const dataProjet = [
         color1:"#f99ed9",
         color2:"#ff800a56",
     },
+    {
+        name:"Portfolio",
+        description:"Mon portfolio , présentes mes diffrérents projets et mes compétences",
+        link_github:"https://github.com/daddykoala/myPortfolio-nextJS",
+        link_github_back:"nope",
+        link_web:"https://moretticlement.fr",
+        langage:"javascript",
+        techno:["react","redux","nginx","photoshop","nextjs"],
+        src: "/svg/invader.svg",
+        alt: "j'avais pas de logo de moi alors pourquoi pas ca ",
+        color1:"#ecd4ca",
+        color2:"#41787f",
+    },
 ];
 
 
