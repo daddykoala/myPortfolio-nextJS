@@ -59,7 +59,7 @@ export default function Header() {
             <nav>
               <ul className={styles.navbar}>
                 <li className={styles.navbar__items}>
-                  <Link href="/">Contact</Link>
+                  <Link href="/#contact">Contact</Link>
                 </li>
                 <li className={styles.navbar__items}>
                   <Link href="/">Projets</Link>
@@ -68,7 +68,7 @@ export default function Header() {
                   <Link href="/">A propos</Link>
                 </li>
                 <li className={styles.navbar__items}>
-                  <Link href="/">Projets</Link>
+                  <Link href="/#projet">Projets</Link>
                 </li>
                 <li className={styles.navbar__items}>
                   <MyImageComponent
@@ -119,7 +119,7 @@ export default function Header() {
                 className={`${styles.header__button} `}
                 onClick={handleOpenMenu}
               >
-                Close{" "}
+                Close
               </h2>
               <ul
                 className={`${styles.header__socials} ${styles.header__socials__open}`}
@@ -175,9 +175,6 @@ export default function Header() {
                   </li>
                   <li>
                     <Link href="/">A propos</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Projets</Link>
                   </li>
                 </ul>
               </nav>

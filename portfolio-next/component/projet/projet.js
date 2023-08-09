@@ -7,15 +7,16 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
+import ProjetButton from "../services/projetButton";
 // import 'swiper/element/css/navigation ';
 
 function projet() {
   const [ref, inView] = useInView({
-    triggerOnce: true,   // L'animation sera déclenchée une seule fois
-    threshold: 0.3       // L'animation sera déclenchée lorsque 10% de l'élément sera visible
-});
+    triggerOnce: true, // L'animation sera déclenchée une seule fois
+    threshold: 0.3, // L'animation sera déclenchée lorsque 10% de l'élément sera visible
+  });
   //fonction pour rechercher le type de svg dans l'objet devicon
   function searchType(nameTech, devicon) {
     //je recupere dans devicon le bon objet
@@ -30,7 +31,6 @@ function projet() {
     }
   }
 
-
   //je place un ecouteur d'evenement sur le scroll pour afficher le titre
   const controls = useAnimation();
   const [scrollY, setScrollY] = useState(false);
@@ -39,7 +39,7 @@ function projet() {
   //   const handleScroll = () => {
   //     setScrollY(true);
   //   };
-  //   window.addEventListener("scroll", handleScroll);  
+  //   window.addEventListener("scroll", handleScroll);
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
   //j'utilise le hooks useanimation()
@@ -52,9 +52,9 @@ function projet() {
   // }, [scrollY, controls]);
 
   return (
-    <section className={styles.projet}>
+    <section className={styles.projet} id="projet">
       <motion.div
-      ref={ref}
+        ref={ref}
         className={styles.projet__title}
         initial={{ opacity: 1, scaleX: 0, originX: 1 }} // Commencez avec une échelle horizontale de 0 et définissez le point d'origine à la droite
         animate={{ opacity: 1, scaleX: 1 }}
@@ -65,8 +65,8 @@ function projet() {
         }}
       >
         <motion.span
-          initial={{ scale: 0 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
-          animate={{ scale: 1 }} // Animer jusqu'à sa position normale avec une rotation de 0 degré
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
           transition={{
             duration: 1,
             delay: 2,
@@ -81,8 +81,8 @@ function projet() {
           ></Image>
         </motion.span>
         <motion.h1
-          initial={{ opacity: 0, rotateX: 90 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
-          animate={{ opacity: 1, rotateX: 0 }} // Animer jusqu'à sa position normale avec une rotation de 0 degré
+          initial={{ opacity: 0, rotateX: 90 }}
+          animate={{ opacity: 1, rotateX: 0 }}
           transition={{
             duration: 1,
             delay: 1.2,
@@ -185,7 +185,7 @@ function projet() {
                     );
                   })}
                 </div>
-                <div className={styles.projet__container__link}>
+                {/* <div className={styles.projet__container__link}>
                   <svg
                     className={styles.projet__container__link__corner1}
                     xmlns="http://www.w3.org/2000/svg"
@@ -206,13 +206,26 @@ function projet() {
                       fill="#ffffff"
                     ></path>
                   </svg>
-                  <Link
-                    href={projet.link_web}
-                    className={styles.projet__container__link__button}
-                  >
-                    Visit
-                  </Link>
-                </div>
+                  <motion.a href={projet.link_web}
+                 
+                      initial={{ rotate: 0 }}
+                      whileHover={{ rotate: 360 }}
+                      onHoverStart={()=> setButtonContent('dddd')}   // Changement de contenu lors du survol
+                      onHoverEnd={()=> setButtonContent('Visit')} 
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.5,
+                        ease: [0.1, 0.71, 0.2, 1.01]
+                      }}
+                      className={styles.projet__container__link__button}
+                    >
+                     {buttonContent}
+                  </motion.a>
+                </div> */}
+
+                <ProjetButton
+                link_web={projet.link_web}/>
+
               </article>
             </SwiperSlide>
           );
