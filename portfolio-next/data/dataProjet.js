@@ -1,7 +1,7 @@
 const dataProjet = [
     {
         name:"Develott",
-        description:"Le site pour les devs Junior qui veulent augmenter leurs compétences ",
+        description:"Le site pour les devs Junior qui veulent augmenter leurs compétences.",
         link_github:"https://github.com/O-clock-Cassini/projet-03-develott-front",
         link_github_back:"https://github.com/daddykoala/develott-back",
         link_web:"https://develott.fr",
@@ -14,7 +14,7 @@ const dataProjet = [
     },
     {
         name:"Trellite",
-        description:"Imitation d'un trello,dans le cadre d'une validation de compétence cote front-end pour le titre professionel",
+        description:"Imitation d'un Trello, dans le cadre d'une validation de compétence côté front-end pour le titre professionnel.",
         link_github:"https://github.com/daddykoala/Kanban",
         link_github_back:"https://github.com/daddykoala/O-Kanban",
         link_web:"https://trellite.moretti-bro-vps.com",
@@ -27,7 +27,7 @@ const dataProjet = [
     },
     {
         name:"Aude Renson",
-        description:"Landing page pour une consultante en parentalité",
+        description:"Landing page pour une consultante en parentalité.",
         link_github:"private",
         link_github_back:"private",
         link_web:"https://auderenson.fr",
@@ -38,6 +38,7 @@ const dataProjet = [
         color1:"#f99ed9",
         color2:"#ff800a56",
     },
-]
+];
+
 
 export default dataProjet;

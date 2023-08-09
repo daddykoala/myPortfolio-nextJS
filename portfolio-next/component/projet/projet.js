@@ -11,6 +11,22 @@ import 'swiper/css';
 
 
 function projet() {
+//fonction pour rechercher le type de svg dans l'objet devicon
+function searchType (nameTech,devicon){
+//je recupere dans devicon le bon objet
+  const techObject = devicon.filter((icon) => (nameTech === icon.name))
+  if (nameTech == 'hostinger'){
+    const type = '/png/hostinger.svg'
+    return type
+  }else{
+
+    const type = techObject[0].versions.svg[0]
+    console.log(type,nameTech);
+    return type
+  }
+}
+
+
 
   return (
     <section className={styles.projet}>
@@ -67,14 +83,14 @@ function projet() {
               <a className={styles.projet__container__git__button} href={projet.link_github} target="blank">repo front</a>
               <a className={styles.projet__container__git__button} href={projet.link_github}>repo back</a>
             </div>
-            <div></div>
             <h3>Techno :</h3>
+            <div className={styles.projet__container__techno}>
             {projet.techno.map((tech) => {
               return (
-                
+
                 <Image
                   key={tech.index}
-                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
+                  src={tech != 'hostinger' ?`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-${searchType(tech,devicon)}.svg`: searchType(tech,devicon) }
                   alt=""
                   width={50}
                   height={50}
@@ -82,6 +98,8 @@ function projet() {
                 
               );
             })}
+
+            </div>
             <div className={styles.projet__container__link}>
 
             <svg
