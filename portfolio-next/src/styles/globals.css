@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Comfortaa';
 }
 
 .body{
@@ -22,4 +23,13 @@ section{
   px);
 }
 
+@font-face {
+  font-family: 'treker';
+  src: url('/font/treker.otf') format('truetype');  /* Ajustez le chemin et le format si nécessaire */
+}
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/font/Comfortaa-VariableFont_wght.ttf') format('truetype'); 
+  /* ou format('woff2-variations') si c'est un fichier woff2 */
+}
 

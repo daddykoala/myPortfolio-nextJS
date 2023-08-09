@@ -48,7 +48,7 @@ function About() {
       <div className={styles.about}>
         <div>
           <h2 className={styles.about__desc}>
-            Développeur fullstack javascript
+            Développeur Fullstack Javascript
           </h2>
           <div className={styles.about__button}>
             <a
@@ -56,7 +56,7 @@ function About() {
               download
               className={styles.about__button__style}
             >
-              cv
+              CV
             </a>
             <Link className={styles.about__button__style} href="/">
               <span>Contact</span>
@@ -85,7 +85,8 @@ function About() {
           </svg>
           
           <span>
-            "Sérieux et motivé je saurai apporté le café tout les matins a tout"
+            "Sérieux et motivé je saurai apporté le café tous les matins à tous
+            "
           </span>
           <svg
             className={styles.about__cornereffectLeft2}

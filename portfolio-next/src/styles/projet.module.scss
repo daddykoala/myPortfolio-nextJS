@@ -1,7 +1,8 @@
 @use "./vars.scss" as vars;
 
+
 .projet {
-  height: 100vh;
+  // height: 100vh;
   // background-color: aqua;
   padding: 10px;
   &__title {
@@ -22,30 +23,26 @@
   }
   //je veux aplliquer un rem a tou les enfants
   &__container > * {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   &__container {
     
-    height: 80vh;
+    height: 50vh;
     border-radius: 30px;
     padding: 1rem;
     color: vars.$color-primary;
     position: relative;
+    z-index: -2;
     overflow: hidden;
     border: 3px solid white ;
     &__techno{
-      position: relative;
-      width: max-content;
+      display: flex;
+      gap:0.2rem;
+      flex-wrap: wrap;
       padding: 0 0.5rem; 
+      width: 80%;
     }
-    // &__techno::before{
-    //   content: "";
-    //   position:absolute;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-color: #c2c2c23f;
-    //   filter: blur(5px);
-    // }
+  
     &__bglogo1 {
       position: absolute;
       transform: rotate(30deg);
@@ -66,7 +63,7 @@
       /* padding: 1.2rem; */
       background: #ffffff63;
       opacity: 0.5;
-    //   z-index: -1;
+      z-index: -1;
     }
 
     &__link{

@@ -5,7 +5,7 @@ import devicon from "../../data/devicon";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import SwiperCore, {Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 // import 'swiper/element/css/navigation ';
 
@@ -31,14 +31,27 @@ function searchType (nameTech,devicon){
   return (
     <section className={styles.projet}>
 
-    <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      navigation
-      spaceBetween={50}
-      slidesPerView={1}
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-    >
+<Swiper
+  modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+  navigation
+  spaceBetween={50}
+  slidesPerView={1}
+  pagination={{ clickable: true }}
+  autoplay={{
+    delay: 5000,
+    disableOnInteraction: true 
+  }}
+  breakpoints={{
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 10
+    },
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    }
+  }}
+>
       
       {dataProjet.map((projet) => {
         return (
@@ -72,16 +85,16 @@ function searchType (nameTech,devicon){
             <div className={styles.projet__container__bglogo2}>
             <Image
             src={projet.src}
-            width={300}
-            height={300}
+            width={200}
+            height={200}
             />
             </div>
 
             <h2 className={styles.projet__title}>{projet.name}</h2>
             <aside>{projet.description}</aside>
             <div className={styles.projet__container__git}>
-              <a className={styles.projet__container__git__button} href={projet.link_github} target="blank">repo front</a>
-              <a className={styles.projet__container__git__button} href={projet.link_github}>repo back</a>
+              <a className={styles.projet__container__git__button} href={projet.link_github} target="blank">Repo Front</a>
+              <a className={styles.projet__container__git__button} href={projet.link_github}>Repo Back</a>
             </div>
             <h3>Techno :</h3>
             <div className={styles.projet__container__techno}>
