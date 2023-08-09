@@ -44,7 +44,7 @@ function About() {
   }, []);
 
   return (
-    <section className={styles.container__about}>
+    <section className={styles.container__about} id='home'>
       <div className={styles.about}>
         <div>
           <h2 className={styles.about__desc}>

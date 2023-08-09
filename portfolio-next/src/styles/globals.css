@@ -10,8 +10,13 @@
   max-width: 1600px; 
  margin:  auto;
  position: relative;
+
 }
 
+html{
+  
+scroll-behavior: smooth;
+}
 
 a {
   color: inherit;

@@ -3,6 +3,7 @@
 
 .projet   {
   height: 100vh;
+ 
   // background-color: aqua;
   padding: 10px;
   & > * {
@@ -41,7 +42,7 @@ position: relative;
     margin-bottom: 2rem;
   }
   &__container {
-    
+    cursor:grab;
     height: 50vh;
     border-radius: 30px;
     padding: 1rem;
