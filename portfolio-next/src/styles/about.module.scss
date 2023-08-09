@@ -34,6 +34,7 @@
         font-size: 22px;
         padding:1rem;
         position: relative;
+        margin-top: 5rem;
         
     }
     &__cornereffectLeft1 {
@@ -78,7 +79,7 @@
     
     &__profil__parallax{
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
         position: relative;
     }
@@ -101,12 +102,15 @@
 }
 @media screen and (max-width: 1024px) {
     //voir home.modules pour voir le responsive du parent 
-
+.about{
+    margin-top: 5rem;
+    
+}
 }
 @media screen and (max-width: 600px) {
     .container__about{
 
-        height: auto; 
+        height: 65vh; 
     }
 
 .about{
@@ -133,6 +137,7 @@
         width: 100%;
         padding-left: 1rem;
         padding-right: 1rem;
+          margin-bottom: 2rem;
         
         & a{
            margin-left: 0.5rem;
@@ -140,6 +145,7 @@
     }
     &__motivation{
         height: auto;
+        font-size: 18px;
         z-index: 54;
     }
     &__profil__parallax{

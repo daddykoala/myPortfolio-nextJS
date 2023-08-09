@@ -2,7 +2,7 @@
 
 
 .projet   {
-  // height: 100vh;
+  height: 100vh;
   // background-color: aqua;
   padding: 10px;
   & > * {
@@ -182,13 +182,26 @@ position: relative;
 /**************medium device*************/
 
 @media screen and (max-width: 1024px) {
+
+  .projet__container{
+    height:550px
+  }
+  .projet__container__techno{
+    width: 80%;
+  }
 }
 
 /**************small device*************/
 
 @media screen and (max-width: 600px) {
 
+  .projet__container__techno{
 
+    width: 100%;
+  }
+  .projet__title{
+    font-size: 1.2rem;
+  }
 
 }
 

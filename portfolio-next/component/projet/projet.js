@@ -1,23 +1,21 @@
-import React ,{ useState,useEffect }from "react";
+import React, { useState, useEffect } from "react";
 import styles from "@/styles/projet.module.scss";
 import dataProjet from "../../data/dataProjet";
 import devicon from "../../data/devicon";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  Autoplay,
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-} from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-
-import { motion,useAnimation } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from "framer-motion";
 // import 'swiper/element/css/navigation ';
 
 function projet() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,   // L'animation sera déclenchée une seule fois
+    threshold: 0.3       // L'animation sera déclenchée lorsque 10% de l'élément sera visible
+});
   //fonction pour rechercher le type de svg dans l'objet devicon
   function searchType(nameTech, devicon) {
     //je recupere dans devicon le bon objet
@@ -31,33 +29,32 @@ function projet() {
       return type;
     }
   }
-  //je place unecouteur d'evenement sur le scroll pur afficher le titre
+
+
+  //je place un ecouteur d'evenement sur le scroll pour afficher le titre
   const controls = useAnimation();
-  const controls2 = useAnimation();
-  const controls3 = useAnimation();
   const [scrollY, setScrollY] = useState(false);
-//je passe mon scroll a true
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(true);
-    };
-    console.log(scrollY);
-    window.addEventListener("scroll", handleScroll);
-    console.log(scrollY);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-//j'utilise le hooks useanimation()
-  useEffect(() => {
-    if (scrollY) {
-        controls.start({ opacity: 1, scaleX: 1 });
-    } else {
-        controls.start({ opacity: 1, scaleX: 0 });
-    }
-}, [scrollY, controls])
+  //je passe mon scroll a true
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollY(true);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);  
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+  //j'utilise le hooks useanimation()
+  // useEffect(() => {
+  //   if (scrollY) {
+  //     controls.start({ opacity: 1, scaleX: 1 });
+  //   } else {
+  //     controls.start({ opacity: 1, scaleX: 0 });
+  //   }
+  // }, [scrollY, controls]);
 
   return (
     <section className={styles.projet}>
       <motion.div
+      ref={ref}
         className={styles.projet__title}
         initial={{ opacity: 1, scaleX: 0, originX: 1 }} // Commencez avec une échelle horizontale de 0 et définissez le point d'origine à la droite
         animate={{ opacity: 1, scaleX: 1 }}
@@ -68,21 +65,21 @@ function projet() {
         }}
       >
         <motion.span
-      initial={{ scale: 0 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
-      animate={{ scale: 1 }} // Animer jusqu'à sa position normale avec une rotation de 0 degré
-      transition={{
-        duration: 1,
-        delay: 2,
-        ease: [0, 0.71, 0.2, 1.01],
-      }}
-    >
-      <Image
-        width={50}
-        height={50}
-        src="/png/fleche.png"
-        alt="fleche"
-      ></Image>
-    </motion.span>
+          initial={{ scale: 0 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
+          animate={{ scale: 1 }} // Animer jusqu'à sa position normale avec une rotation de 0 degré
+          transition={{
+            duration: 1,
+            delay: 2,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
+          <Image
+            width={50}
+            height={50}
+            src="/png/fleche.png"
+            alt="fleche"
+          ></Image>
+        </motion.span>
         <motion.h1
           initial={{ opacity: 0, rotateX: 90 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
           animate={{ opacity: 1, rotateX: 0 }} // Animer jusqu'à sa position normale avec une rotation de 0 degré
@@ -95,11 +92,10 @@ function projet() {
         >
           Mes travaux.
         </motion.h1>
-        
       </motion.div>
 
       <Swiper
-        modules={[ Autoplay]}
+        modules={[Autoplay]}
         navigation
         spaceBetween={50}
         slidesPerView={1}

@@ -31,8 +31,8 @@ function About() {
       // const image3 = document.querySelector(
       //   "." + styles.about__profil__parallax3
       // );
-      image1.style.transform = "translateY(" + -scrollPosition * 0.2 + "px)";
-      image2.style.transform = "translateY(" + -scrollPosition * 0.1 + "px)";
+      image1.style.transform = "translateY(" + scrollPosition * 0.2 + "px)";
+      image2.style.transform = "translateY(" + scrollPosition * 0.1 + "px)";
       // image3.style.transform = "translateY(" + scrollPosition * 0.1 + "px)";
     };
 
