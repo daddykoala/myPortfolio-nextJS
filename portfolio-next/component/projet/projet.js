@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ useState,useEffect }from "react";
 import styles from "@/styles/projet.module.scss";
 import dataProjet from "../../data/dataProjet";
 import devicon from "../../data/devicon";
@@ -14,7 +14,7 @@ import SwiperCore, {
 } from "swiper/modules";
 import "swiper/css";
 
-import { motion } from "framer-motion";
+import { motion,useAnimation } from "framer-motion";
 // import 'swiper/element/css/navigation ';
 
 function projet() {
@@ -31,52 +31,75 @@ function projet() {
       return type;
     }
   }
+  //je place unecouteur d'evenement sur le scroll pur afficher le titre
+  const controls = useAnimation();
+  const controls2 = useAnimation();
+  const controls3 = useAnimation();
+  const [scrollY, setScrollY] = useState(false);
+//je passe mon scroll a true
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(true);
+    };
+    console.log(scrollY);
+    window.addEventListener("scroll", handleScroll);
+    console.log(scrollY);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+//j'utilise le hooks useanimation()
+  useEffect(() => {
+    if (scrollY) {
+        controls.start({ opacity: 1, scaleX: 1 });
+    } else {
+        controls.start({ opacity: 1, scaleX: 0 });
+    }
+}, [scrollY, controls])
 
   return (
     <section className={styles.projet}>
-      
       <motion.div
         className={styles.projet__title}
         initial={{ opacity: 1, scaleX: 0, originX: 1 }} // Commencez avec une échelle horizontale de 0 et définissez le point d'origine à la droite
-        animate={{ opacity: 1, scaleX: 1 }} // Animer jusqu'à une échelle normale
+        animate={{ opacity: 1, scaleX: 1 }}
         transition={{
           duration: 1,
           delay: 0.5,
           ease: [0, 0.71, 0.2, 1.01],
         }}
       >
+        <motion.span
+      initial={{ scale: 0 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
+      animate={{ scale: 1 }} // Animer jusqu'à sa position normale avec une rotation de 0 degré
+      transition={{
+        duration: 1,
+        delay: 2,
+        ease: [0, 0.71, 0.2, 1.01],
+      }}
+    >
+      <Image
+        width={50}
+        height={50}
+        src="/png/fleche.png"
+        alt="fleche"
+      ></Image>
+    </motion.span>
         <motion.h1
-  initial={{ opacity: 0, rotateX: 90 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
-   animate={{ opacity: 1, rotateX: 0 }} // Animer jusqu'à sa position normale avec une rotation de 0 degré
-  transition={{
-    duration: 1,
-    delay: 1.2,
-    ease: [0, 0.71, 0.2, 1.01]
-  }}
-  // style={{ rotateY: 0 }}
->
+          initial={{ opacity: 0, rotateX: 90 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
+          animate={{ opacity: 1, rotateX: 0 }} // Animer jusqu'à sa position normale avec une rotation de 0 degré
+          transition={{
+            duration: 1,
+            delay: 1.2,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          // style={{ rotateY: 0 }}
+        >
           Mes travaux.
         </motion.h1>
-        <motion.span
-        initial={{ scale: 0 }} // Commencez avec une rotation de 90 degrés (caché) et une opacité de 0
-        animate={{ scale: 1,}} // Animer jusqu'à sa position normale avec une rotation de 0 degré
-       transition={{
-         duration: 1,
-         delay: 2,
-         ease: [0, 0.71, 0.2, 1.01]
-       }}> 
-          <Image
-          width={50}
-          height={50}
-          src='/png/fleche.png'
-          alt='fleche'>
-
-          </Image>
-        </motion.span>
+        
       </motion.div>
 
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+        modules={[ Autoplay]}
         navigation
         spaceBetween={50}
         slidesPerView={1}

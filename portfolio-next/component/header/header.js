@@ -20,6 +20,8 @@ export default function Header() {
     setOpenMenu(!openMenu);
   };
 
+  
+
   return (
     <header className={styles.header}>
       <div className={`${styles.header__item} ${styles.header__item1}`}>

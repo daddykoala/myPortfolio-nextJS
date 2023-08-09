@@ -33,10 +33,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        {/* <Header/> */}
+        <Header/>
         <div className={`${styles.home} `}>
         <About/>
-        <Info/>
+        {/* <Info/> */}
         </div>
           <Projet/>
         

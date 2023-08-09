@@ -25,10 +25,12 @@
 position: relative;
 
       & img{
-        transform: rotate3d(1, 0, 0, 170deg) rotate3d(0, 0, 1, 110deg);
-      position: absolute;
-      right: -70px;
-      };
+        transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 0, 1, -90deg);
+        position: absolute;
+        /* right: -70px; */
+        left: -81px;
+        bottom: -23px;
+    }
     }
 
     
@@ -185,4 +187,8 @@ position: relative;
 /**************small device*************/
 
 @media screen and (max-width: 600px) {
+
+
+
 }
+
