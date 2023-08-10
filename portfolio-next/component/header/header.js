@@ -64,7 +64,7 @@ export default function Header() {
                     return (
                       <li key={index} className={styles.navbar__items}>
                         <Link href={item.href}>
-                        <MyImageComponent src={item.src} alt={item.alt} />
+                          <MyImageComponent src={item.src} alt={item.alt} />
                         </Link>
                       </li>
                     );
@@ -74,61 +74,32 @@ export default function Header() {
               </ul>
             </nav>
           </div>
-          <div className={styles.header__item}>  </div>{" "}
+          <div className={styles.header__item}> </div>{" "}
         </>
       ) : (
         <div className={styles.header__1024px}>
           {/* au click onouvre le menu et change le texte */}
-          {!openMenu ? (
-            <>
-              <h2
-                className={`${styles.header__button}`}
-                onClick={handleOpenMenu}
-              >
-                Menu
-              </h2>
-              <ul className={styles.header__socials}>
-                <Link className={styles.navbar__items} href='/' >
-                  <MyImageComponent
-                    src="/png/wattsapp.png"
-                    alt="logo wattsapp"
-                    
-                  />
-                </Link>
-                <Link className={styles.navbar__items} href='/'>
-                  <MyImageComponent
-                    src="/png/linkedin.png"
-                    alt="logo linkedin"
-                  />
-                </Link>
-              </ul>
-            </>
-          ) : (
-            <>
-              <h2
-                className={`${styles.header__button} `}
-                onClick={handleOpenMenu}
-              >
-                Close
-              </h2>
-              <ul
-                className={`${styles.header__socials} ${styles.header__socials__open}`}
-              >
-                <li className={styles.navbar__items}>
-                  <MyImageComponent
-                    src="/png/wattsapp.png"
-                    alt="logo wattsapp"
-                  />
-                </li>
-                <li className={styles.navbar__items}>
-                  <MyImageComponent
-                    src="/png/linkedin.png"
-                    alt="logo linkedin"
-                  />
-                </li>
-              </ul>
-            </>
-          )}
+          <>
+            <h2 className={styles.header__button} onClick={handleOpenMenu}>
+              {!openMenu ? "Menu" : "Close"}
+            </h2>
+
+            <ul
+              className={`${styles.header__socials} ${
+                openMenu ? styles.header__socials__open : ""
+              }`}
+            >
+              {navbarData.map((link) =>
+                link.type === "image" ? (
+                  <li key={link.alt} className={styles.navbar__items}>
+                    <Link href={link.href}>
+                      <MyImageComponent src={link.src} alt={link.alt} />
+                    </Link>
+                  </li>
+                ) : null
+              )}
+            </ul>
+          </>
 
           {/* a l'ouverture du menu la div apparait */}
           {openMenu ? (
