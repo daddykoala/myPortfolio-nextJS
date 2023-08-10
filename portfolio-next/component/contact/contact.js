@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/contact.module.scss";
 import Image from "next/image";
+import navbarData from "../../data/dataNavBar";
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 
-function contact() {
+function Contact() {
+  
   return (
-    <section>
+  <section id='contact' className={styles.contact}>
   <h1>Contact</h1>
   <div className={styles.contact__container}>
     <div className={styles.contact__container__items}>
@@ -33,14 +35,18 @@ function contact() {
 
     <div className={styles.contact__container__items}>
       <div className={styles.contact__image}>
-        <Image src="/path_to_your_image.jpg" alt="Description de l'image" width={500} height={500} />
+        <Image src="/png/mesmall.png" alt="Description de l'image" width={250} height={250} />
       </div>
       
       <div className={styles.contact__socials}>
-        <a href="#" className={styles.contact__socials__icon}><img src="/path_to_facebook_icon.png" alt="Facebook" /></a>
-        <a href="#" className={styles.contact__socials__icon}><img src="/path_to_twitter_icon.png" alt="Twitter" /></a>
-        <a href="#" className={styles.contact__socials__icon}><img src="/path_to_instagram_icon.png" alt="Instagram" /></a>
-        <!-- Ajoutez d'autres icônes de réseaux sociaux ici -->
+      {
+  navbarData.map((item) => 
+    item.type === 'image'
+      ? <a href={item.href} className={styles.contact__socials__icon}><Image src={item.src} alt={item.alt} width={50} height={50}/></a>
+      : null
+  )
+}
+        
       </div>
     </div>
   </div>
@@ -49,4 +55,4 @@ function contact() {
   )
 }
 
-export default contact
+export default Contact

@@ -1,0 +1,110 @@
+@use "./vars.scss" as vars;
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    & h1{
+        margin-top: 2rem;
+    margin-bottom: 2rem;
+    }
+
+}
+.contact__container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border-radius: vars.$border-radius;
+    background-image: url('/png/desk.jpg');
+background-size: cover;
+padding: 2rem;
+margin: 10px;
+
+    &__items > * {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // width: 100%;
+    }
+}
+.contact__form > * {
+    margin-bottom: 1rem;
+    
+}
+.contact__form{
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+               
+}
+&__label{
+    font-size: 18px;
+    margin-bottom: 1rem;
+    
+}
+&__input{
+    border: solid 2px vars.$color-primary;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color:vars.$color-primary-opacity50;
+    transition: background-color 0.4s ease-in-out;
+    
+}
+&__input:focus{
+    background-color:vars.$color-primary-opacity80;  
+}
+&__textarea:focus{
+    background-color:vars.$color-primary-opacity80;  
+}
+&__textarea{
+    border: solid 2px vars.$color-primary;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color:vars.$color-primary-opacity50
+}
+&__textarea{
+    border: solid 2px vars.$color-primary;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color:vars.$color-primary-opacity50
+}
+&__button{
+    border: solid 2px vars.$color-primary;
+    color: vars.$color-background;
+    background-color:vars.$color-primary-opacity50;
+    transition: background-color 0.4s ease-in-out;
+    border-radius: vars.$border-radius;
+    padding:1rem
+}
+&__button:hover{
+    
+    background-color:vars.$color-primary;
+   
+}
+
+}
+.contact__socials{
+    //display indique plus haut
+    flex-direction: row;
+    justify-content: space-around;
+}
+/******************small device***********/
+@media screen and (max-width: 700px) {
+
+    .contact{
+        &__container{
+            flex-direction: column;
+        }
+    
+    }
+    .contact__socials{
+        //display indique plus haut
+        
+        justify-content: space-evenly;
+    }
+  }

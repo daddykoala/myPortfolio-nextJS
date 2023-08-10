@@ -10,6 +10,7 @@ import Header from '../../component/header/header'
 import About  from '../../component/about/about';
 import Projet from '../../component/projet/projet';
 import Info from '../../component/info/info';
+import Contact from '../../component/contact/contact';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -33,12 +34,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header/>
+        {/* <Header/> */}
         <div className={`${styles.home} `}>
         <About/>
-        {/* <Info/> */}
+        <Info/>
         </div>
           <Projet/>
+          <Contact/>
+          
         
         
       </main>

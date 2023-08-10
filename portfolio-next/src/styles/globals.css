@@ -38,3 +38,13 @@ section{
   /* ou format('woff2-variations') si c'est un fichier woff2 */
 }
 
+input, textarea, button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+}
+
