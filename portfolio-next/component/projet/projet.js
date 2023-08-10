@@ -26,37 +26,17 @@ function projet() {
       return type;
     } else {
       const type = techObject[0].versions.svg[0];
-      console.log(type, nameTech);
+     
       return type;
     }
   }
-
-  //je place un ecouteur d'evenement sur le scroll pour afficher le titre
-  const controls = useAnimation();
-  const [scrollY, setScrollY] = useState(false);
-  //je passe mon scroll a true
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollY(true);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-  //j'utilise le hooks useanimation()
-  // useEffect(() => {
-  //   if (scrollY) {
-  //     controls.start({ opacity: 1, scaleX: 1 });
-  //   } else {
-  //     controls.start({ opacity: 1, scaleX: 0 });
-  //   }
-  // }, [scrollY, controls]);
 
   return (
     <section className={styles.projet} id="projet">
       <motion.div
         ref={ref}
         className={styles.projet__title}
-        initial={{ opacity: 1, scaleX: 0, originX: 1 }} // Commencez avec une échelle horizontale de 0 et définissez le point d'origine à la droite
+        initial={{ opacity: 1, scaleX: 0, originX: 1 }} 
         animate={{ opacity: 1, scaleX: 1 }}
         transition={{
           duration: 1,
@@ -185,47 +165,7 @@ function projet() {
                     );
                   })}
                 </div>
-                {/* <div className={styles.projet__container__link}>
-                  <svg
-                    className={styles.projet__container__link__corner1}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 100 100"
-                  >
-                    <path
-                      d="m100,0H0v100C0,44.77,44.77,0,100,0Z"
-                      fill="#ffffff"
-                    ></path>
-                  </svg>
-                  <svg
-                    className={styles.projet__container__link__corner2}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 100 100"
-                  >
-                    <path
-                      d="m100,0H0v100C0,44.77,44.77,0,100,0Z"
-                      fill="#ffffff"
-                    ></path>
-                  </svg>
-                  <motion.a href={projet.link_web}
-                 
-                      initial={{ rotate: 0 }}
-                      whileHover={{ rotate: 360 }}
-                      onHoverStart={()=> setButtonContent('dddd')}   // Changement de contenu lors du survol
-                      onHoverEnd={()=> setButtonContent('Visit')} 
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.5,
-                        ease: [0.1, 0.71, 0.2, 1.01]
-                      }}
-                      className={styles.projet__container__link__button}
-                    >
-                     {buttonContent}
-                  </motion.a>
-                </div> */}
-
-                <ProjetButton
-                link_web={projet.link_web}/>
-
+                <ProjetButton link_web={projet.link_web} />
               </article>
             </SwiperSlide>
           );
