@@ -26,6 +26,7 @@ a {
 section{
   transform: translateY(90
   px);
+  margin-bottom: 2rem;
 }
 
 @font-face {

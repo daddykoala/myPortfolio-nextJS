@@ -1,19 +1,33 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 import styles from "@/styles/contact.module.scss";
 import Image from "next/image";
 import navbarData from "../../data/dataNavBar";
+import emailjs from '@emailjs/browser';
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 
 function Contact() {
-  
+
+  const form = useRef();
+
+  const sendEmail = (e) => {e.preventDefault();
+  console.log(form.current);
+    emailjs.sendForm('service_hix04zk', 'template_32xxghg', form.current, '4SZ6ZUnbvRVNec90_')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+  };
+
   return (
   <section id='contact' className={styles.contact}>
   <h1>Contact</h1>
   <div className={styles.contact__container}>
     <div className={styles.contact__container__items}>
-      <form className={styles.contact__form}>
+      <form ref={form} onSubmit={sendEmail}  className={styles.contact__form}>
         <div className={styles.contact__form__group}>
           <label htmlFor="name" className={styles.contact__form__label}>Nom</label>
           <input type="text" id="name" className={styles.contact__form__input} placeholder="Votre nom" required />
@@ -29,20 +43,20 @@ function Contact() {
           <textarea id="message" className={styles.contact__form__textarea} placeholder="Votre message" required></textarea>
         </div>
 
-        <button type="submit" className={styles.contact__form__button}>Envoyer</button>
+        <button type="submit"  className={styles.contact__form__button}>Envoyer</button>
       </form>
     </div>
 
     <div className={styles.contact__container__items}>
       <div className={styles.contact__image}>
-        <Image src="/png/mesmall.png" alt="Description de l'image" width={250} height={250} />
+        <Image src="/png/mesmall.png" alt="Description de l'image" width={250} height={300} />
       </div>
       
       <div className={styles.contact__socials}>
       {
   navbarData.map((item) => 
     item.type === 'image'
-      ? <a href={item.href} className={styles.contact__socials__icon}><Image src={item.src} alt={item.alt} width={50} height={50}/></a>
+      ? <a key={item.index}href={item.href} className={styles.contact__socials__icon}><Image src={item.src} alt={item.alt} width={50} height={50}/></a>
       : null
   )
 }
