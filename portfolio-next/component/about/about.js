@@ -4,20 +4,18 @@ import styles from "@/styles/about.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 //IMAGE PARALLAX
-//je crée un objet datalogo pour mieux mapper et la mainetance du code 
+//je crée un objet datalogo pour mieux mapper et la mainetance du code
 import logoData from "../../data/logoData";
-
 
 import ME from "../../public/png/imageprofil.png";
 import MESMALL from "../../public/png/mesmall.png";
 import INSTA from "../../public/png/halftone.png";
-
+import Corner from "../design/corner";
 
 function About() {
   //leger parallax lorsqu'on scroole sur page je modifie selon la couche la vitesse de defilement.
   const screenWidth = useSelector((state) => state.screen.screenWidth);
-  
-
+  const bgColor = useSelector((state) => state.screen.bgColor);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +42,7 @@ function About() {
   }, []);
 
   return (
-    <section className={styles.container__about} id='home'>
+    <section className={styles.container__about} id="home">
       <div className={styles.about}>
         <div>
           <h2 className={styles.about__desc}>
@@ -63,44 +61,27 @@ function About() {
             </Link>
           </div>
         </div>
-        <div>
-        {/* {logoData.map((logo, index) => (
-        <Image
-          key={index}
-          className={styles[logo.className]}
-          src={logo.src}
-          alt={logo.alt}
-          width={screenWidth > 1024 ? 90 : 60}
-          height={screenWidth > 1024 ? 90 : 60}
-        />
-      ))} */}
-        </div>
+        <div></div>
         <div className={styles.about__motivation}>
-          <svg
+          <Corner
             className={styles.about__cornereffectLeft1}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-          >
-            <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#ffffff"></path>
-          </svg>
-          
+            bgColor={bgColor}
+          />
+          <Corner
+            className={styles.about__cornereffectLeft2}
+            bgColor={bgColor}
+          />
+
           <span>
             "Sérieux et motivé je saurai apporté le café tous les matins à tous
             "
           </span>
-          <svg
-            className={styles.about__cornereffectLeft2}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-          >
-            <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#ffffff"></path>
-          </svg>
         </div>
       </div>
       <div className={styles.about__profil__parallax}>
         <Image
           className={styles.about__profil__parallax1}
-          src={screenWidth > 900 ? ME : MESMALL }
+          src={screenWidth > 900 ? ME : MESMALL}
           alt="clement moretti"
           width={screenWidth > 1024 ? 450 : 300}
           height={screenWidth > 1024 ? 625 : 400}
@@ -113,7 +94,6 @@ function About() {
           width={screenWidth > 1024 ? 450 : 350}
           height={screenWidth > 1024 ? 450 : 350}
         />
-        
       </div>
     </section>
   );
