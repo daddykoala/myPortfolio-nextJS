@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 
     screenWidth: typeof window !== 'undefined' ? window.innerWidth : 0,
+    bgColor:'#ffffff'
 };
 
 export const mediaSlice = createSlice({

@@ -5,10 +5,12 @@ import styles from "@/styles/header.module.scss";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import navbarData from "../../data/dataNavBar";
+import Corner from "../design/corner";
 
 export default function Header() {
   //je recupere la valeur de l'ecran
   const screenWidth = useSelector((state) => state.screen.screenWidth);
+  const bgColor = useSelector((state) => state.screen.bgColor);
 
   //composant image reutilisable car toute les images de la meme taille.
   const MyImageComponent = ({ src, alt }) => (
@@ -25,28 +27,13 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`${styles.header__item} ${styles.header__item1}`}>
         <h1> Moretti Clément </h1>{" "}
-        <svg
-          className={styles.header__cornereffectLeft}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-        >
-          <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#ffffff"></path>
-        </svg>
-        <svg
+        <Corner className={styles.header__cornereffectLeft} bgColor={bgColor} />
+        <Corner
           className={styles.header__cornereffectLeft2}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-        >
-          <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#ffffff"></path>
-        </svg>
+          bgColor={bgColor}
+        />
       </div>
-      <svg
-        className={styles.header__cornereffectRight}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-      >
-        <path d="m100,0H0v100C0,44.77,44.77,0,100,0Z" fill="#ffffff"></path>
-      </svg>
+      <Corner className={styles.header__cornereffectRight} bgColor={bgColor} />
 
       {screenWidth > 1024 ? (
         <>
@@ -104,38 +91,24 @@ export default function Header() {
           {/* a l'ouverture du menu la div apparait */}
           {openMenu ? (
             <>
-              <svg
+              <Corner
                 className={styles.navbarSmartphone__cornereffect__left}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 100 100"
-              >
-                <path
-                  d="m100,0H0v100C0,44.77,44.77,0,100,0Z"
-                  fill="#ff8383"
-                ></path>
-              </svg>
-              <svg
+                bgColor={"#ff8383"}
+              />
+              <Corner
                 className={styles.navbarSmartphone__cornereffect__right}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 100 100"
-              >
-                <path
-                  d="m100,0H0v100C0,44.77,44.77,0,100,0Z"
-                  fill="#ff8383"
-                ></path>
-              </svg>
+                bgColor={"#ff8383"}
+              />
 
               <nav className={styles.navbarSmartphone}>
                 <ul>
-                  <li>
-                    <Link href="/">Contact</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Projets</Link>
-                  </li>
-                  <li>
-                    <Link href="/">A propos</Link>
-                  </li>
+                  {navbarData.map((link) =>
+                    link.type === "link" ? (
+                      <li key={link.alt} className={styles.navbar__items}>
+                        <Link href={link.href}>{link.label}</Link>
+                      </li>
+                    ) : null
+                  )}
                 </ul>
               </nav>
             </>
