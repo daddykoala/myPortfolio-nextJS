@@ -15,7 +15,7 @@ import Corner from "../design/corner";
 function About() {
   //leger parallax lorsqu'on scroole sur page je modifie selon la couche la vitesse de defilement.
   const screenWidth = useSelector((state) => state.screen.screenWidth);
-  const bgColor = useSelector((state) => state.screen.bgColor);
+  const {bgColor,fontColor, bgColor2,fontColor2} = useSelector((state) => state.screen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +42,9 @@ function About() {
   }, []);
 
   return (
-    <section className={styles.container__about} id="home">
+    <section className={styles.container__about} id="home" 
+    // style={{ background: bgColor2, color: fontColor2}}
+    >
       <div className={styles.about}>
         <div>
           <h2 className={styles.about__desc}>
@@ -73,8 +75,7 @@ function About() {
           />
 
           <span>
-            "Sérieux et motivé je saurai apporté le café tous les matins à tous
-            "
+         " Prêt à relever de nouveaux défis avec sérieux et enthousiasme."
           </span>
         </div>
       </div>

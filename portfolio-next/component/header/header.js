@@ -10,7 +10,7 @@ import Corner from "../design/corner";
 export default function Header() {
   //je recupere la valeur de l'ecran
   const screenWidth = useSelector((state) => state.screen.screenWidth);
-  const bgColor = useSelector((state) => state.screen.bgColor);
+  const {bgColor,fontColor, bgColor2} = useSelector((state) => state.screen);
 
   //composant image reutilisable car toute les images de la meme taille.
   const MyImageComponent = ({ src, alt }) => (
@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.header__item} ${styles.header__item1}`}>
+      <div className={`${styles.header__item} ${styles.header__item1}`} style={{ background: bgColor, color: fontColor}}>
         <h1> Moretti Clément </h1>{" "}
         <Corner className={styles.header__cornereffectLeft} bgColor={bgColor} />
         <Corner
