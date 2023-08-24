@@ -58,7 +58,7 @@ function About() {
             >
               CV
             </a>
-            <Link className={styles.about__button__style} href="/">
+            <Link className={styles.about__button__style} href="/#contact">
               <span>Contact</span>
             </Link>
           </div>
