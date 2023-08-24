@@ -183,16 +183,17 @@ function projet() {
                         );
                       })}
                     </div>
-                    
                   </div>
-                  
                 </div>
                 <div>
-                {projet.link_web === "indisponible" ? (
-                      <ProjetButtonIndispo color={projet.color1} />
-                    ) : (
-                      <ProjetButton link_web={projet.link_web} />
-                    )}
+                  {projet.link_web === "indisponible" ? (
+                    <ProjetButtonIndispo color={projet.color1} />
+                  ) : (
+                    <ProjetButton
+                      link_web={projet.link_web}
+                      color={projet.color1}
+                    />
+                  )}
                 </div>
               </article>
             </SwiperSlide>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "@/styles/projet.module.scss";
 
-export default function projetButton({link_web}) {
+export default function projetButton({link_web,color}) {
   //fonction qui change le contenu du buutton de projet au survol
   const [buttonContent, setButtonContent] = useState("Visit");
 
@@ -24,8 +24,8 @@ export default function projetButton({link_web}) {
       </svg>
       <motion.a
       href={link_web}
-      initial={{ rotate: 0 }}
-      whileHover={{ rotate: 360 }}
+      initial={{ rotate: 0 ,backgroundColor:"black"}}
+      whileHover={{ rotate: 360 ,backgroundColor:color}}
       onHoverStart={() => {
         setTimeout(() => setButtonContent("→→→"), 200);
       }}
