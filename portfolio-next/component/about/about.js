@@ -52,7 +52,7 @@ function About() {
           </h2>
           <div className={styles.about__button}>
             <a
-              href="public/png/CV_Clement_Moretti_FS.png"
+              href="/png/CV_Clement_Moretti_FS.png"
               download
               className={styles.about__button__style}
             >
