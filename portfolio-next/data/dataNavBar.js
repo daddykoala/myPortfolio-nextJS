@@ -7,19 +7,20 @@ const navbarData = [
     source: "",
   },
   {
-    label: "A propos",
-    href: "/",
-    type: "link",
-    src: "",
-    source: "",
-  },
-  {
     label: "Projets",
     href: "/#projet",
     type: "link",
     src: "",
     source: "",
   },
+  {
+    label: "Contact",
+    href: "/#contact",
+    type: "link",
+    src: "",
+    source: "",
+  },
+  
   {
     label: "linkedin",
     href: "https://www.linkedin.com/in/clement-moretti-39ab59220/",
