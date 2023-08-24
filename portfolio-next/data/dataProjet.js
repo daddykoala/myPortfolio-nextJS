@@ -17,7 +17,7 @@ const dataProjet = [
         description:"Imitation d'un Trello, dans le cadre d'une validation de compétence côté front-end pour le titre professionnel.",
         link_github:"https://github.com/daddykoala/Kanban",
         link_github_back:"https://github.com/daddykoala/O-Kanban",
-        link_web:"https://trellite.moretti-bro-vps.com",
+        link_web:"indisponible",
         langage:"javascript",
         techno:["react","redux","jest","nodejs","sequelize","nginx","hostinger","photoshop","express"],
         src: "/png/logo_docker.png",

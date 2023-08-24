@@ -10,6 +10,7 @@ import "swiper/css";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import ProjetButton from "../services/projetButton";
+import ProjetButtonIndispo from "../services/projetButtonIndispo";
 // import 'swiper/element/css/navigation ';
 
 function projet() {
@@ -26,7 +27,7 @@ function projet() {
       return type;
     } else {
       const type = techObject[0].versions.svg[0];
-     
+
       return type;
     }
   }
@@ -36,7 +37,7 @@ function projet() {
       <motion.div
         ref={ref}
         className={styles.projet__title}
-        initial={{ opacity: 1, scaleX: 0, originX: 1 }} 
+        initial={{ opacity: 1, scaleX: 0, originX: 1 }}
         animate={{ opacity: 1, scaleX: 1 }}
         transition={{
           duration: 1,
@@ -112,7 +113,7 @@ function projet() {
             `,
                 }}
               >
-                {/* en tete avec langage de programation et logo du projet  */}
+                {/* en tete avec langage de programation et logo du projet position absolute */}
                 <div className={styles.projet__container__bglogo1}>
                   <Image
                     src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${projet.langage}/${projet.langage}-original.svg`}
@@ -124,48 +125,75 @@ function projet() {
                 <div className={styles.projet__container__bglogo2}>
                   <Image src={projet.src} width={200} height={200} />
                 </div>
+                {/* commence les div en display flex */}
+                <div className={styles.projet__container__items}>
+                  <h2 className={styles.projet__container__title}>
+                    {projet.name}
+                  </h2>
+                  <aside>{projet.description}</aside>
+                  <div className={styles.projet__container__git}>
+                    {projet.link_github === "private" ? (
+                      <div className={styles.projet__container__git__button}>
+                        {" "}
+                        code propriétaire{" "}
+                      </div>
+                    ) : (
+                      <>
+                        <a
+                          className={styles.projet__container__git__button}
+                          href={projet.link_github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Repo Front
+                        </a>
+                        <a
+                          className={styles.projet__container__git__button}
+                          href={projet.link_github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Repo Back
+                        </a>
+                      </>
+                    )}
+                  </div>
+                </div>
 
-                <h2 className={styles.projet__container__title}>
-                  {projet.name}
-                </h2>
-                <aside>{projet.description}</aside>
-                <div className={styles.projet__container__git}>
-                  <a
-                    className={styles.projet__container__git__button}
-                    href={projet.link_github}
-                    target="blank"
-                  >
-                    Repo Front
-                  </a>
-                  <a
-                    className={styles.projet__container__git__button}
-                    href={projet.link_github}
-                  >
-                    Repo Back
-                  </a>
+                <div className={styles.projet__container__items}>
+                  <h3>Techno :</h3>
+                  <div className={styles.projet__container__footer}>
+                    <div className={styles.projet__container__footer__techno}>
+                      {projet.techno.map((tech) => {
+                        return (
+                          <Image
+                            key={tech.index}
+                            src={
+                              tech != "hostinger"
+                                ? `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-${searchType(
+                                    tech,
+                                    devicon
+                                  )}.svg`
+                                : searchType(tech, devicon)
+                            }
+                            alt=""
+                            width={40}
+                            height={40}
+                          />
+                        );
+                      })}
+                    </div>
+                    
+                  </div>
+                  
                 </div>
-                <h3>Techno :</h3>
-                <div className={styles.projet__container__techno}>
-                  {projet.techno.map((tech) => {
-                    return (
-                      <Image
-                        key={tech.index}
-                        src={
-                          tech != "hostinger"
-                            ? `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-${searchType(
-                                tech,
-                                devicon
-                              )}.svg`
-                            : searchType(tech, devicon)
-                        }
-                        alt=""
-                        width={50}
-                        height={50}
-                      />
-                    );
-                  })}
+                <div>
+                {projet.link_web === "indisponible" ? (
+                      <ProjetButtonIndispo color={projet.color1} />
+                    ) : (
+                      <ProjetButton link_web={projet.link_web} />
+                    )}
                 </div>
-                <ProjetButton link_web={projet.link_web} />
               </article>
             </SwiperSlide>
           );
