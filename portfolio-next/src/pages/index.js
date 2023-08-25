@@ -38,7 +38,7 @@ export default function Home() {
         <Header/>
         <div className={`${styles.home} `}>
         <About/>
-        <Info/>
+        {/* <Info/> */}
         </div>
           <Projet/>
           <Contact/>

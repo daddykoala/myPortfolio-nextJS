@@ -15,6 +15,7 @@
     overflow: hidden;
     border-radius: vars.$border-radius;
     padding-top: 110px;
+    position: relative;
 }
 .about{
     color: vars.$color-primary;
@@ -34,6 +35,7 @@
         font-size: 22px;
         padding:1rem;
         position: relative;
+        z-index: 54;
         margin-top: 5rem;
         
     }
@@ -45,7 +47,7 @@
         left: 0px;
         position: absolute
         ;
-        z-index: 2000;
+        z-index: 50;
    
         transform: rotate(-90deg);
       }
@@ -104,6 +106,7 @@
     //voir home.modules pour voir le responsive du parent 
 .about{
     margin-top: 5rem;
+
     
 }
 }
@@ -111,6 +114,7 @@
     .container__about{
 
         height: 65vh; 
+        overflow: hidden;
     }
 
 .about{
@@ -146,20 +150,25 @@
     &__motivation{
         height: auto;
         font-size: 18px;
-        z-index: 54;
+        
+        
     }
     &__profil__parallax{
         display: flex;
-        align-items: end;
-        justify-content: center;
-        position: relative;
+        // align-items: end;
+        // justify-content: center;
+        position: absolute;
+        // bottom: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 52;
         // overflow: hidden;
         
         
         
     }
     &__profil__parallax2{
-        position :absolute;
+        // position :absolute;
         z-index: 52;
         
     }
