@@ -49,17 +49,26 @@ function Contact() {
 
     <div className={styles.contact__container__items}>
       <div className={styles.contact__container__image}>
-        <Image src="/png/mesmall.png" alt="Description de l'image" width={250} height={300} />
-      </div>
-      
-      <div className={styles.contact__socials}>
-      {
+        <Image className={styles.contact__container__image__profil}src="/png/mesmall.png" alt="Description de l'image" width={250} height={300} />
+        {
   navbarData.map((item) => 
     item.type === 'image'
-      ? <a key={item.index}href={item.href} className={styles.contact__socials__icon}><Image src={item.src} alt={item.alt} width={50} height={50}/></a>
+      ? <a key={item.index} href={item.href} className={styles[`contact__container__image__icon__${item.label}`]}>
+
+      <Image src={item.src} alt={item.alt} width={70} height={70}/></a>
       : null
   )
 }
+      </div>
+      
+      <div className={styles.contact__container__socials}>
+      {/* {
+  navbarData.map((item) => 
+    item.type === 'image'
+      ? <a key={item.index}href={item.href} className={styles.contact__container__socials__icon}><Image src={item.src} alt={item.alt} width={50} height={50}/></a>
+      : null
+  )
+} */}
         
       </div>
     </div>
