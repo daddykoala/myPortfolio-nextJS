@@ -48,7 +48,7 @@ function Contact() {
     </div>
 
     <div className={styles.contact__container__items}>
-      <div className={styles.contact__image}>
+      <div className={styles.contact__container__image}>
         <Image src="/png/mesmall.png" alt="Description de l'image" width={250} height={300} />
       </div>
       
