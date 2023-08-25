@@ -179,9 +179,33 @@ top: 0px;
 @media screen and (max-width: 700px) {
   .contact {
     &__container {
-      flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /*on retire l'image de background donner sur le conteneur en entier pour la remettre a items*/
+        background-image: none;
     }
+    &__container__items:nth-child(2) {
+        padding-top: 2rem;
+        
+        
+      }
+      &__container__items:nth-child(1) {
+        background-image: url("/png/desk.jpg");
+        background-size: cover;
+        border-radius: vars.$border-radius;
+        
+        
+      }
+      &__container__items form {
+        margin-top: 1rem;
+        
+        
+      }
   }
+
+
+
   .contact__socials {
     //display indique plus haut
 
