@@ -19,11 +19,11 @@ export default function Footer() {
         <h1 className={styles.footer__item__name}> Moretti Clément
         <Corner
         className={styles.footer__item__name__cornerTop}
-        Color={bgColor}
+        bgColor={bgColor}
         />
         <Corner
         className={styles.footer__item__name__cornerBottom}
-        Color={bgColor}
+        bgColor={bgColor}
         />
         </h1>
       </div>
