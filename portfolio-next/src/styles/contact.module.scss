@@ -11,13 +11,14 @@
   }
 }
 .contact__container {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  border-radius: vars.$border-radius;
-  background-image: url("/png/desk.jpg");
-  background-size: cover;
-  padding: 2rem;
+display: grid;
+grid-template-columns: 1fr 1fr;
+width: 100%;
+border-radius: vars.$border-radius;
+background-image: url("/png/desk.jpg");
+background-size: cover;
+// overflow: hidden;
+//   padding: 2rem;
   margin: 10px;
 
   &__items > * {
@@ -26,45 +27,71 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /*position reltive pour mes deux items*/
-    position: relative;
+
+    
+  }
+  &__items:nth-child(1) {
+    margin-top: 1rem;
+    
+    
   }
   &__items:nth-child(2) {
     // margin-bottom: 1rem;
-    // background-color: aliceblue;
+    background-color: vars.$color-primary;
+    border-radius: 0 0 0 vars.$border-radius ;
+    height: 80%;
+    width: 100%;
+    position: relative;
+    
+    
   }
+  &__items__cornerLeft{
+      position: absolute;
+    display: block;
+    width: 30px;
+top: 0px;
+    left: -30px;
+    transform: rotate(90deg);
+    
+    // background-color: #da2727;
+    } 
+    &__items__cornerRight{
+        position: absolute;
+      display: block;
+      width: 30px;
   
-
+      right: 0px;
+      bottom:-30px;
+      transform: rotate(90deg);
+      
+      // background-color: #da2727;
+      } 
   &__image {
     border-radius: 50%;
     width: 250px;
     height: 250px;
-    // overflow: hidden;
-    // position: relative;
-    background-color: vars.$color-border;
-    // z-index: 500;
-    &__profil{
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
+    position: relative;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+    
+    
+
 
     &__profil {
+      border-radius: 50%;
+      background-color: vars.$color-border;
+      width: 250px;
+      height: 250px;
       background-size: cover;
       position: absolute;
-      bottom: -4rem;
-      left: -6px;
       z-index: 999;
-    //   display: none;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      //   display: none;
     }
-    // &__icon {
-    //     background-color: vars.$color-border;
-    //     padding: 10px;
-    //     position: absolute;
-    //     //je veux que mes icons soient devant
-    //     z-index: 1000;
-    //   }
   }
- 
 
   &__image__icon__wattsapp {
     background-color: #080808;
@@ -80,7 +107,7 @@
     /* left: -23px; */
     right: -56px;
     border-radius: 50%;
-    z-index: 1000; 
+    z-index: 1000;
   }
   &__image__icon__linkedin {
     background-color: #080808;
@@ -96,8 +123,6 @@
     border-radius: 50%;
     z-index: 1000;
   }
- 
-  
 }
 .contact__form > * {
   margin-bottom: 1rem;
