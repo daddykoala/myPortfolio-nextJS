@@ -1,0 +1,48 @@
+@use "./vars.scss" as vars;
+
+.footer {
+  background-color: rgb(199, 199, 199);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  margin: 10px;
+  border-radius: vars.$border-radius;
+
+  &__item:nth-child(2) {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem 0 2rem 0;
+  }
+  &__item {
+    &__column {
+      width: 50%;
+      &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        &__link {
+          margin-top: 10px;
+          transition: all vars.$transition-hover;
+          
+        }
+        &__link:hover {
+            margin-top: 10px;
+            margin-left: 3px;
+            color:vars.$color-primary
+          }
+
+        &__image {
+            margin-top: 10px;
+            transition: all 800ms;
+        }
+        &__image:hover {
+            transform:scale(1.1)
+            
+        }
+      }
+      
+    }
+
+    
+  }
+}
