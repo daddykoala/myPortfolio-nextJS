@@ -1,7 +1,7 @@
 @use "./vars.scss" as vars;
 
 .footer {
-  background-color: rgb(199, 199, 199);
+  background-color:vars.$color-background-footer;
   display: grid;
   grid-template-columns: 2fr 3fr;
   margin: 10px;
@@ -26,6 +26,7 @@
       text-align: end;
       padding: 1rem;
       font-size: 3rem;
+      font-family: vars.$font-family-titre;
       border-radius: 0 vars.$border-radius vars.$border-radius 0;
       position: relative;
       &__cornerTop {
@@ -46,20 +47,26 @@
       }
     }
     &__column {
-      width: 50%;
+    
+      
+      &  h2{
+        color:vars.$color-footer;
+      }
       &__list {
         list-style: none;
         display: flex;
         flex-direction: column;
+        color:vars.$color-footer;
 
         &__link {
           margin-top: 10px;
           transition: all vars.$transition-hover;
+          color:vars.$color-footer
         }
         &__link:hover {
           margin-top: 10px;
           margin-left: 3px;
-          color: vars.$color-primary;
+          color:vars.$color-background-contact
         }
 
         &__image {

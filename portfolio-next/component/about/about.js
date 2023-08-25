@@ -84,8 +84,8 @@ function About() {
           className={styles.about__profil__parallax1}
           src={screenWidth > 900 ? ME : MESMALL}
           alt="clement moretti"
-          width={screenWidth > 1024 ? 450 : 300}
-          height={screenWidth > 1024 ? 625 : 400}
+          width={screenWidth > 1024 ? 400 : 300}
+          height={screenWidth > 1024 ? 575 : 400}
         />
 
         <Image

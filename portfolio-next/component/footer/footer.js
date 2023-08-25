@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.footer__item}>
-        <h1 className={styles.footer__item__name}> Moretti Clément
+        <h1 className={styles.footer__item__name}> MORETTI Clément
         <Corner
         className={styles.footer__item__name__cornerTop}
         bgColor={bgColor}
@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
       <div className={styles.footer__item}>
         <div className={styles.footer__item__column}>
-          <h2>Lien Utiles</h2>
+          <h2>Liens utiles</h2>
           <ul className={styles.footer__item__column__list}>
             {navbarData.map((item, index) => {
               if (item.type === "link") {
@@ -48,7 +48,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className={styles.footer__item__column}>
           <h2>Suivez-moi</h2>
           <ul className={styles.footer__item__column__list}>
             {navbarData.map((item, index) => {

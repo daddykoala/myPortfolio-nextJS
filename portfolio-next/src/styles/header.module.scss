@@ -11,7 +11,7 @@
   position: fixed;
   border-top: solid 5px white;
   z-index: 1000;
-  // background-color: aqua;
+  
   &__cornereffectRight {
     display: block;
     width: 30px;
@@ -40,7 +40,8 @@
     text-align: center;
     transform: translateY(50%);
     // font-family: 'treker';
-    font-family: 'Comfortaa';
+    font-family: vars.$font-family-titre;
+    letter-spacing: 2px;
 
   }
 
@@ -59,7 +60,7 @@
 }
 
 .navbar {
-  background: vars.$color-primary-opacity50;
+  background: vars.$color-primary-opacity80;
   display: grid;
   grid-template-columns: 60px 60px 80px 60px 20px 20px;
   gap: 2rem;

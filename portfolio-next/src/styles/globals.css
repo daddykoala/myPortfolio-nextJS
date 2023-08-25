@@ -10,10 +10,10 @@
   max-width: 1600px; 
  margin:  auto;
  position: relative;
-
 }
 
 html{
+  /* background-color: #fcf8eb; */
   
 scroll-behavior: smooth;
 }

@@ -9,8 +9,8 @@
     text-align: center;
     // height: 100vh;
     // width: 75%;
-    background-color: antiquewhite;
-    background-image: url(../../public/png/linewall.jpg);
+    background: vars.$color-background-about;
+    // background-image: url(../../public/png/linewall.jpg);
     background-size: cover;
     overflow: hidden;
     border-radius: vars.$border-radius;

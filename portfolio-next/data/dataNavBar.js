@@ -1,6 +1,6 @@
 const navbarData = [
   {
-    label: "Acceuil",
+    label: "Accueil",
     href: "/#home",
     type: "link",
     src: "",
