@@ -15,11 +15,17 @@
     width: 75%;
     margin-left: 25%;
     padding: 1.5rem;
-    font-size: 1.5rem;
+  
     font-weight: bold;
     border-radius: vars.$border-radius 0 0 vars.$border-radius;
     background-image: url(/png/black-felt.png);
     background-color: vars.$color-primary-opacity50;
+
+    & h1 {
+      font-family: vars.$font-family-titre;
+      font-size: vars.$font-family-titre-size;
+      letter-spacing: 5px;
+    }
 
     & span {
       position: relative;
@@ -216,5 +222,11 @@
   }
   .projet__title {
     font-size: 1.2rem;
+
+    & h1 {
+
+      font-size: 2rem;
+   
+    }
   }
 }

@@ -38,7 +38,11 @@ section{
   src: url('/font/Comfortaa-VariableFont_wght.ttf') format('truetype'); 
   /* ou format('woff2-variations') si c'est un fichier woff2 */
 }
-
+@font-face {
+  font-family: 'DM';
+  src: url('/font/DMSerifDisplay-regular.ttf') format('truetype'); 
+  /* ou format('woff2-variations') si c'est un fichier woff2 */
+}
 input, textarea, button {
   margin: 0;
   padding: 0;

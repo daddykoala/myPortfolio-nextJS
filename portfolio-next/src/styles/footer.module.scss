@@ -73,3 +73,19 @@
     }
   }
 }
+@media screen and (max-width: 700px){
+    .footer {
+       
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        &__item:nth-child(1){
+            width: 80%;
+        }
+        &__item__name{
+            font-size: 2rem;
+            font-family: vars.$font-family-titre;
+            letter-spacing: 3px;
+        }
+
+}}

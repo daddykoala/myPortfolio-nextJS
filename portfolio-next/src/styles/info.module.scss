@@ -3,6 +3,21 @@
     grid-template-rows: 20% 40% 38%;
     gap: 10px;
     text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(215, 226, 250) ;
+    border-radius: 30px;
+
+    &__features{
+        position:absolute;
+        font-size: 3rem;
+        writing-mode: vertical-lr;
+        transform: rotate(196deg);
+
+
+    }
    
 
     &__story{
