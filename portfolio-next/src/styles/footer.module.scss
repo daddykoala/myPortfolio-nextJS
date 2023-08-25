@@ -6,13 +6,45 @@
   grid-template-columns: 2fr 3fr;
   margin: 10px;
   border-radius: vars.$border-radius;
+  min-height: 30vh;
 
   &__item:nth-child(2) {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     margin: 2rem 0 2rem 0;
   }
+  &__item:nth-child(1) {
+    display: flex;
+    align-items: center;
+    // justify-content: flex-end;
+  }
   &__item {
+    &__name {
+      background-color: vars.$color-primary;
+      width: 100%;
+      text-align: end;
+      padding: 1rem;
+      font-size: 3rem;
+      border-radius: 0 vars.$border-radius vars.$border-radius 0;
+      position: relative;
+      &__cornerTop {
+        display: block;
+        width: 30px;
+        position: absolute;
+        top: -30px;
+        left: 0px;
+        transform: rotate(270deg);
+      }
+      &__cornerBottom {
+        display: block;
+        width: 30px;
+        position: absolute;
+        left: 0px;
+        bottom: -30px;
+        transform: rotate(0deg);
+      }
+    }
     &__column {
       width: 50%;
       &__list {
@@ -23,26 +55,21 @@
         &__link {
           margin-top: 10px;
           transition: all vars.$transition-hover;
-          
         }
         &__link:hover {
-            margin-top: 10px;
-            margin-left: 3px;
-            color:vars.$color-primary
-          }
+          margin-top: 10px;
+          margin-left: 3px;
+          color: vars.$color-primary;
+        }
 
         &__image {
-            margin-top: 10px;
-            transition: all 800ms;
+          margin-top: 10px;
+          transition: all 800ms;
         }
         &__image:hover {
-            transform:scale(1.1)
-            
+          transform: scale(1.1);
         }
       }
-      
     }
-
-    
   }
 }

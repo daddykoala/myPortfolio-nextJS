@@ -11,6 +11,7 @@ import About  from '../../component/about/about';
 import Projet from '../../component/projet/projet';
 import Info from '../../component/info/info';
 import Contact from '../../component/contact/contact';
+import Footer from '../../component/footer/footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,6 +42,7 @@ export default function Home() {
         </div>
           <Projet/>
           <Contact/>
+          <Footer/>
           
         
         
