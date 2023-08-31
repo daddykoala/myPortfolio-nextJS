@@ -6,11 +6,14 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import navbarData from "../../data/dataNavBar";
 import Corner from "../design/corner";
+import { motion } from "framer-motion";
 
 export default function Header() {
   //je recupere la valeur de l'ecran
   const screenWidth = useSelector((state) => state.screen.screenWidth);
-  const {bgColor,fontColor, bgColor2} = useSelector((state) => state.screen);
+  const { bgColor, fontColor, bgColorNavBar } = useSelector(
+    (state) => state.screen
+  );
 
   //composant image reutilisable car toute les images de la meme taille.
   const MyImageComponent = ({ src, alt }) => (
@@ -22,10 +25,31 @@ export default function Header() {
   const handleOpenMenu = (e) => {
     setOpenMenu(!openMenu);
   };
-
+  //framer motion pour le menu smartphone
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+  const item = {
+    hidden: { x: 10, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+    },
+  };
   return (
     <header className={styles.header}>
-      <div className={`${styles.header__item} ${styles.header__item1}`} style={{ background: bgColor, color: fontColor}}>
+      <div
+        className={`${styles.header__item} ${styles.header__item1}`}
+        style={{ background: bgColor, color: fontColor }}
+      >
         <h1> Moretti Clément </h1>{" "}
         <Corner className={styles.header__cornereffectLeft} bgColor={bgColor} />
         <Corner
@@ -91,26 +115,57 @@ export default function Header() {
           {/* a l'ouverture du menu la div apparait */}
           {openMenu ? (
             <>
-              <Corner
+              <div
+                style={{
+                  position: "fixed", // Fixed position
+                  top: 0, // Start from the top
+                  left: 0, // Start from the left
+                  width: "100%", // Full width
+                  height: "100vh", // Full viewport height
+                  backgroundColor: "rgba(0, 0, 0, 0.5)", // Gray background with 50% opacity
+                  zIndex: 100, // Make sure it covers other items
+                }}
+              ></div>
+              {/* <Corner
                 className={styles.navbarSmartphone__cornereffect__left}
-                bgColor={"#ff8383"}
-              />
-              <Corner
+                bgColor={bgColorNavBar}
+              /> */}
+              {/* <Corner
                 className={styles.navbarSmartphone__cornereffect__right}
-                bgColor={"#ff8383"}
-              />
+                bgColor={bgColorNavBar}
+              /> */}
 
-              <nav className={styles.navbarSmartphone}>
-                <ul>
+              <motion.nav
+                className={styles.navbarSmartphone}
+                initial={{ opacity: 0, scaleY: 0 }}
+                animate={{ opacity: 1, scaleY: 1 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+                style={{ originY: 0 }}
+              >
+                <motion.ul
+                  className="container"
+                  variants={container}
+                  initial="hidden"
+                  animate="visible"
+                >
                   {navbarData.map((link) =>
                     link.type === "link" ? (
-                      <li key={link.alt} className={styles.navbar__items}>
+                      <motion.li
+                        key={link.alt}
+                        variants={item}
+                        className={styles.navbar__items}
+                        onClick={handleOpenMenu}
+                      >
                         <Link href={link.href}>{link.label}</Link>
-                      </li>
+                      </motion.li>
                     ) : null
                   )}
-                </ul>
-              </nav>
+                </motion.ul>
+              </motion.nav>
             </>
           ) : (
             ""
