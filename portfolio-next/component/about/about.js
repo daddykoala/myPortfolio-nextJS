@@ -8,7 +8,7 @@ import Link from "next/link";
 import logoData from "../../data/logoData";
 
 import ME from "../../public/png/imageprofil.png";
-import MESMALL from "../../public/png/mesmall.png";
+import MESMALL from "../../public/png/mesmall1.png";
 import INSTA from "../../public/png/halftone.png";
 import Corner from "../design/corner";
 
@@ -82,9 +82,9 @@ function About() {
       <div className={styles.about__profil__parallax}>
         <Image
           className={styles.about__profil__parallax1}
-          src={screenWidth > 900 ? ME : MESMALL}
+          src={MESMALL}
           alt="clement moretti"
-          width={screenWidth > 1024 ? 400 : 300}
+          width={screenWidth > 1024 ? 575 : 400}
           height={screenWidth > 1024 ? 575 : 400}
         />
 
