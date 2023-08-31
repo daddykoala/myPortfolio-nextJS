@@ -15,8 +15,10 @@ import Corner from "../design/corner";
 function About() {
   //leger parallax lorsqu'on scroole sur page je modifie selon la couche la vitesse de defilement.
   const screenWidth = useSelector((state) => state.screen.screenWidth);
-  const {bgColor,fontColor, bgColor2,fontColor2} = useSelector((state) => state.screen);
-
+  const { bgColor, fontColor, bgColor2, fontColor2 } = useSelector(
+    (state) => state.screen
+  );
+  console.log("je suis rerendu");
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -42,8 +44,10 @@ function About() {
   }, []);
 
   return (
-    <section className={styles.container__about} id="home" 
-    // style={{ background: bgColor2, color: fontColor2}}
+    <section
+      className={styles.container__about}
+      id="home"
+      // style={{ background: bgColor2, color: fontColor2}}
     >
       <div className={styles.about}>
         <div>
@@ -62,8 +66,27 @@ function About() {
               <span>Contact</span>
             </Link>
           </div>
+          {screenWidth < 600 ? (
+            <div className={styles.about__profil__parallax}>
+              <Image
+                className={styles.about__profil__parallax1}
+                src={MESMALL}
+                alt="clement moretti"
+                width={350}
+                height={350}
+              />
+
+              <Image
+                className={styles.about__profil__parallax2}
+                src={INSTA}
+                alt="insta"
+                width={screenWidth > 1024 ? 450 : 350}
+                height={screenWidth > 1024 ? 450 : 350}
+              />
+            </div>
+          ) : null}
         </div>
-        <div></div>
+
         <div className={styles.about__motivation}>
           <Corner
             className={styles.about__cornereffectLeft1}
@@ -75,27 +98,29 @@ function About() {
           />
 
           <span>
-         " Prêt à relever de nouveaux défis avec sérieux et enthousiasme."
+            " Prêt à relever de nouveaux défis avec sérieux et enthousiasme."
           </span>
         </div>
       </div>
-      <div className={styles.about__profil__parallax}>
-        <Image
-          className={styles.about__profil__parallax1}
-          src={MESMALL}
-          alt="clement moretti"
-          width={screenWidth > 1024 ? 575 : 400}
-          height={screenWidth > 1024 ? 575 : 400}
-        />
+      {screenWidth > 600 ? (
+        <div className={styles.about__profil__parallax}>
+          <Image
+            className={styles.about__profil__parallax1}
+            src={MESMALL}
+            alt="clement moretti"
+            width={screenWidth > 1024 ? 575 : 400}
+            height={screenWidth > 1024 ? 575 : 400}
+          />
 
-        <Image
-          className={styles.about__profil__parallax2}
-          src={INSTA}
-          alt="insta"
-          width={screenWidth > 1024 ? 450 : 350}
-          height={screenWidth > 1024 ? 450 : 350}
-        />
-      </div>
+          <Image
+            className={styles.about__profil__parallax2}
+            src={INSTA}
+            alt="insta"
+            width={screenWidth > 1024 ? 450 : 350}
+            height={screenWidth > 1024 ? 450 : 350}
+          />
+        </div>
+      ) : null}
     </section>
   );
 }

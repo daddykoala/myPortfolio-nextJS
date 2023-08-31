@@ -224,6 +224,7 @@
 
 @media screen and (max-width: 600px) {
   .header {
+    gap: 0;
     & h1 {
       // transform: rotate(90deg);
       font-size: 18px;
@@ -240,6 +241,12 @@
     }
     & h2 {
       font-size: 14px;
+    }
+    &__1024px {
+      display: flex;
+      justify-content: none;
+      padding: 1rem;
+      
     }
   }
 }

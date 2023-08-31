@@ -15,7 +15,10 @@ export const mediaSlice = createSlice({
     initialState,
     reducers: {
         setWidth: (state, action) => {
+
             state.screenWidth = action.payload;
+            console.log("Screen Width:", state.screenWidth);
+
         }
     }
 });
