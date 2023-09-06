@@ -147,14 +147,15 @@ function projet() {
                         >
                           Repo Front
                         </a>
-                        <a
+                        { projet.link_github_back === "nope" ? null : <a
                           className={styles.projet__container__git__button}
                           href={projet.link_github_back}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           Repo Back
-                        </a>
+                        </a>}
+                        
                       </>
                     )}
                   </div>
