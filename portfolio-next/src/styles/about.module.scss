@@ -1,6 +1,8 @@
 @use "./vars.scss" as vars;
 
 
+
+
 .container__about{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -23,6 +25,7 @@
         top: 0px;
         left: -428px;
         box-shadow: 3px 18px 19px rgba(248, 248, 248, 0.521), inset 0em 0 2.4em rgba(255, 255, 255, 0.623);
+        z-index: 0;
     }
 }
 .about{
@@ -81,14 +84,57 @@
         display: flex;
         gap: 2rem;
         justify-content: center;
+        position: relative
+        ;
+        z-index: 1;
+        transition: vars.$transition-hover;
 
         &__style{
             border: solid 2px vars.$color-primary;
             padding: 1rem;
             border-radius: vars.$border-radius-button;
-        }
+            // transition: transform vars.$transition-hover;
+            
+            animation: slideout 0.5s forwards; }
     }
+    &__button__style:hover{
+        // transform: scale(1.1);
+        animation: slidein 0.3s forwards;
+    }
+    @keyframes slidein {
+        from {
+            box-shadow: 0px 0px  vars.$color-about-bs, inset 0px 0px 0em vars.$color-about-bsinset;
+            transform: scale(1);
+        }
+      
+        to {
+            box-shadow: -11px 15px vars.$color-about-bs, inset 3px -3px 0em vars.$color-about-bsinset;
+            transform: scale(1.1);
+        }
+      }
+
+      @keyframes slideout {
+        from {
+          box-shadow: -11px 15px vars.$color-about-bs, inset 3px -3px 0em vars.$color-about-bsinset;
+          transform: scale(1.1);
+        }
+        to {
+          box-shadow: 0px 0px 0px 0px vars.$color-about-bs, 0em 0em 0em 0em vars.$color-about-bsinset;
+          transform: scale(1);
+        }
+      }
+      
+    // @keyframes initialShadow {
+    //     to {
+    //         box-shadow: 0px 0px 0px 0px rgb(255, 255, 255), 0em 0em 0em 0em rgb(7, 7, 7);
+    //     }
+    // }
     
+    // @keyframes hoverShadow {
+    //     to {
+    //         box-shadow: -11px 15px rgb(255, 255, 255), inset 3px -3px 0em rgb(7, 7, 7);
+    //     }
+    // }
     &__profil__parallax{
         display: flex;
         align-items: flex-end;
