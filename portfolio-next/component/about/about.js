@@ -11,6 +11,7 @@ import ME from "../../public/png/imageprofil.png";
 import MESMALL from "../../public/png/mesmall1.png";
 import INSTA from "../../public/png/halftone.png";
 import Corner from "../design/corner";
+import AboutPattern1 from "../design/pattern";
 
 function About() {
   //leger parallax lorsqu'on scroole sur page je modifie selon la couche la vitesse de defilement.
@@ -76,14 +77,7 @@ function About() {
                 width={350}
                 height={350}
               />
-
-              <Image
-                className={styles.about__profil__parallax2}
-                src={INSTA}
-                alt="insta"
-                width={screenWidth > 1024 ? 450 : 350}
-                height={screenWidth > 1024 ? 450 : 350}
-              />
+              <AboutPattern1 className={styles.about__profil__parallax2} />
             </div>
           ) : null}
         </div>
@@ -112,14 +106,7 @@ function About() {
             width={screenWidth > 1024 ? 575 : 400}
             height={screenWidth > 1024 ? 575 : 400}
           />
-
-          <Image
-            className={styles.about__profil__parallax2}
-            src={INSTA}
-            alt="insta"
-            width={screenWidth > 1024 ? 450 : 350}
-            height={screenWidth > 1024 ? 450 : 350}
-          />
+          <AboutPattern1 className={styles.about__profil__parallax2} />
         </div>
       ) : null}
     </section>
