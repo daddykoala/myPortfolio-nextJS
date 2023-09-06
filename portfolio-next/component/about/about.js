@@ -49,6 +49,7 @@ function About() {
       id="home"
       // style={{ background: bgColor2, color: fontColor2}}
     >
+      <div className={styles.container__about__background}></div>
       <div className={styles.about}>
         <div>
           <h2 className={styles.about__desc}>

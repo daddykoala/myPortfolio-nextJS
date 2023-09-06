@@ -14,6 +14,16 @@
     border-radius: vars.$border-radius;
     padding-top: 110px;
     position: relative;
+    &__background{
+        position: absolute;
+        width: 1500px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.205);
+        transform: rotateZ(309deg);
+        top: 0px;
+        left: -428px;
+        box-shadow: 3px 18px 19px rgba(248, 248, 248, 0.521), inset 0em 0 2.4em rgba(255, 255, 255, 0.623);
+    }
 }
 .about{
     color: vars.$color-primary;
@@ -21,8 +31,12 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 10rem;
-    // padding: 1rem;
-
+    &__background{
+        position:absolute;
+        width: 50%;
+        height: 100%;
+        background-color: black;
+    }
     &__motivation{
         display: flex;
         align-items: center;
@@ -100,6 +114,16 @@
 }
 @media screen and (max-width: 1024px) {
     //voir home.modules pour voir le responsive du parent 
+    .container__about{
+        
+        .container__about__background {
+            width: 1500px;
+            height: 415px;
+            left: -548px;
+            box-shadow: 3px 18px 19px rgba(248, 248, 248, 0.521), inset 0em 0 2.4em rgba(255, 255, 255, 0.623);
+        }
+        
+    }
 .about{
     margin-top: 5rem;
 
@@ -113,7 +137,9 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
- 
+        &__background {
+            display: none;
+        }
     }
 
 .about{
