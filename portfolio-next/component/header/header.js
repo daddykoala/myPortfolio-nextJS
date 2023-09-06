@@ -20,7 +20,7 @@ export default function Header() {
     <Image src={src} alt={alt} width={30} height={30} />
   );
 
-  //je crée une variable pour l'état du menu fals car fermé a l'uverture de l'app sur mobile
+  //je crée une variable pour l'état du menu fals car fermé a l'ouverture de l'app sur mobile
   const [openMenu, setOpenMenu] = useState(false);
   const handleOpenMenu = (e) => {
     setOpenMenu(!openMenu);
