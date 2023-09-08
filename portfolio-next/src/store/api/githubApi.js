@@ -23,12 +23,8 @@ export const githubApi = createApi({
       query: () => `users/daddykoala/repos`,
     }),
 
-    getUserFollowers: builder.query({
-      query: () => `users/daddykoala/followers`,
-    }),
-
-    getUserFollowing: builder.query({
-      query: () => `users/daddykoala/following`,
+    getUserRepoCommits: builder.query({
+      query: ({ repo }) => `repos/daddykoala/${repo}/commits`,
     }),
 
     getUserStarred: builder.query({
@@ -42,5 +38,5 @@ export const githubApi = createApi({
 });
 
 export const {
- useGetUserProfileQuery,
+ useGetUserProfileQuery,useGetUserPublicEventsQuery, useGetUserReposQuery,useGetUserRepoCommitsQuery
 } = githubApi;
